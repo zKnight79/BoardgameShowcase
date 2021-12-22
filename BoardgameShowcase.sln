@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Model", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Common", "BoardgameShowcase.Common\BoardgameShowcase.Common.csproj", "{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.DbRepository", "BoardgameShowcase.DbRepository\BoardgameShowcase.DbRepository.csproj", "{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
