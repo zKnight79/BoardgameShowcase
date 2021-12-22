@@ -5,11 +5,11 @@ namespace BoardgameShowcase.Model.Service
     public interface IGenericService<T> where T : GenericEntity
     {
         Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(string entityId);
-        Task<T> AddAsync(T entity);
-        Task<T> UpdateAsync(T entity);
-        Task<T> SaveAsync(T entity) => entity.IsNew ? AddAsync(entity) : UpdateAsync(entity);
-        Task<T> DeleteByIdAsync(string entityId);
-        Task<T> DeleteAsync(T entity) => DeleteByIdAsync(entity.Id);
+        Task<T?> GetByIdAsync(string entityId);
+        protected Task<T?> AddAsync(T entity);
+        protected Task<T?> ModifyAsync(T entity);
+        Task<T?> SaveAsync(T entity) => entity.IsNew ? AddAsync(entity) : ModifyAsync(entity);
+        Task<T?> RemoveByIdAsync(string entityId);
+        Task<T?> RemoveAsync(T entity) => RemoveByIdAsync(entity.Id!);
     }
 }
