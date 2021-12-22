@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.DbRepository.Service
 {
-    class GenericService<T> : Loggable<GenericService<T>>, IGenericService<T> where T : GenericEntity
+    abstract class GenericService<T> : Loggable<GenericService<T>>, IGenericService<T> where T : GenericEntity
     {
         private readonly IGenericRepository<T> _genericRepository;
 
