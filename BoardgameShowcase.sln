@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Model", "BoardgameShowcase.Model\BoardgameShowcase.Model.csproj", "{452EC0EE-1412-401D-A822-E572196D2B72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Common", "BoardgameShowcase.Common\BoardgameShowcase.Common.csproj", "{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{452EC0EE-1412-401D-A822-E572196D2B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{452EC0EE-1412-401D-A822-E572196D2B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{452EC0EE-1412-401D-A822-E572196D2B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
