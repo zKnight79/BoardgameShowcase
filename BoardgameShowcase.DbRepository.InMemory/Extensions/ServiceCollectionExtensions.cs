@@ -11,6 +11,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Extensions
         {
             services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IIllustratorRepository, IllustratorRepository>();
+            services.AddTransient<IPublisherRepository, PublisherRepository>();
 
             services.AddBoardgameShowcaseDbRepository();
 
