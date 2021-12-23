@@ -25,17 +25,23 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
 
         protected abstract T CloneEntity(T entity);
 
+        protected IEnumerable<T> CloneEntities(IEnumerable<T> entities)
+        {
+            List<T> clonedEntities = new();
+            foreach (T entity in entities)
+            {
+                clonedEntities.Add(CloneEntity(entity));
+            }
+            return clonedEntities;
+        }
+        
         public Task<IEnumerable<T>> FindAllAsync()
         {
             Logger.LogMethodCall();
 
-            List<T> entities = new();
-            foreach (T entity in Entities)
-            {
-                entities.Add(CloneEntity(entity));
-            }
+            IEnumerable<T> entities = CloneEntities(Entities);
 
-            return Task.FromResult<IEnumerable<T>>(entities);
+            return Task.FromResult(entities);
         }
 
         public Task<T?> FindByIdAsync(string entityId)

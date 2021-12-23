@@ -27,13 +27,9 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
             Logger.LogMethodCall(namePart);
 
             IEnumerable<Illustrator> matchingIllustrators = Entities.Where(x => x.Name.Contains(namePart, StringComparison.InvariantCultureIgnoreCase));
-            List<Illustrator> illustrators = new();
-            foreach (Illustrator illustrator in matchingIllustrators)
-            {
-                illustrators.Add(CloneEntity(illustrator));
-            }
+            IEnumerable<Illustrator> illustrators = CloneEntities(matchingIllustrators);
 
-            return Task.FromResult<IEnumerable<Illustrator>>(illustrators);
+            return Task.FromResult(illustrators);
         }
     }
 }

@@ -27,13 +27,9 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
             Logger.LogMethodCall(namePart);
 
             IEnumerable<Publisher> matchingPublishers = Entities.Where(x => x.Name.Contains(namePart, StringComparison.InvariantCultureIgnoreCase));
-            List<Publisher> publishers = new();
-            foreach (Publisher publisher in matchingPublishers)
-            {
-                publishers.Add(CloneEntity(publisher));
-            }
+            IEnumerable<Publisher> publishers = CloneEntities(matchingPublishers);
 
-            return Task.FromResult<IEnumerable<Publisher>>(publishers);
+            return Task.FromResult(publishers);
         }
     }
 }
