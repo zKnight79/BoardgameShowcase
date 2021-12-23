@@ -1,4 +1,5 @@
-﻿using BoardgameShowcase.Model.Entity;
+﻿using BoardgameShowcase.DbRepository.InMemory.Test.Extensions;
+using BoardgameShowcase.Model.Entity;
 using BoardgameShowcase.Model.Service;
 using Xunit;
 
@@ -37,18 +38,14 @@ namespace BoardgameShowcase.DbRepository.InMemory.Test
         }
 
         [Theory]
-        [InlineData("azerty", 0)]
-        [InlineData("li", 3, "0c67dd6252e142a8b5b010cdfc3b6dd7", "afca2c0c57664311af12ebf09daf70dd", "9d740aea7dbe442d9116fa2aad730222")]
-        [InlineData("del", 1, "afca2c0c57664311af12ebf09daf70dd")]
-        [InlineData("s ", 2, "b916ee6e523142438ab09ef8ff11780d", "9d740aea7dbe442d9116fa2aad730222")]
-        public async Task GetByNameTest(string namePart, int expectedCount, params string[] illustratorIds)
+        [InlineData("azerty")]
+        [InlineData("li", "0c67dd6252e142a8b5b010cdfc3b6dd7", "afca2c0c57664311af12ebf09daf70dd", "9d740aea7dbe442d9116fa2aad730222")]
+        [InlineData("del", "afca2c0c57664311af12ebf09daf70dd")]
+        [InlineData("s ", "b916ee6e523142438ab09ef8ff11780d", "9d740aea7dbe442d9116fa2aad730222")]
+        public async Task GetByNameTest(string namePart, params string[] illustratorIds)
         {
             IEnumerable<Illustrator> illustrators = await _illustratorService.GetByNameAsync(namePart);
-            Assert.Equal(expectedCount, illustrators.Count());
-            foreach (string illustratorId in illustratorIds)
-            {
-                Assert.Contains(illustrators, i => i.Id == illustratorId);
-            }
+            AssertExtensions.EntitiesMatch(illustratorIds, illustrators);
         }
 
         [Fact]

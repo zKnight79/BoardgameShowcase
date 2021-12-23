@@ -1,3 +1,4 @@
+using BoardgameShowcase.DbRepository.InMemory.Test.Extensions;
 using BoardgameShowcase.Model.Entity;
 using BoardgameShowcase.Model.Service;
 using Xunit;
@@ -37,18 +38,14 @@ namespace BoardgameShowcase.DbRepository.InMemory.Test
         }
 
         [Theory]
-        [InlineData("azerty", 0)]
-        [InlineData("li", 2, "bdf144204fb3476aa9094f9ac5cd7112", "294fb4abf5d94d93b21aebff08998b3d")]
-        [InlineData("bauz", 1, "31709d7cb6b743adb35c9546bef3fdee")]
-        [InlineData("icha", 2, "1e5e9bb7d5c84bc596f73488f9c6a19c", "294fb4abf5d94d93b21aebff08998b3d")]
-        public async Task GetByNameTest(string namePart, int expectedCount, params string[] authorIds)
+        [InlineData("azerty")]
+        [InlineData("li", "bdf144204fb3476aa9094f9ac5cd7112", "294fb4abf5d94d93b21aebff08998b3d")]
+        [InlineData("bauz", "31709d7cb6b743adb35c9546bef3fdee")]
+        [InlineData("icha", "1e5e9bb7d5c84bc596f73488f9c6a19c", "294fb4abf5d94d93b21aebff08998b3d")]
+        public async Task GetByNameTest(string namePart, params string[] authorIds)
         {
             IEnumerable<Author> authors = await _authorService.GetByNameAsync(namePart);
-            Assert.Equal(expectedCount, authors.Count());
-            foreach (string authorId in authorIds)
-            {
-                Assert.Contains(authors, a => a.Id == authorId);
-            }
+            AssertExtensions.EntitiesMatch(authorIds, authors);
         }
 
         [Fact]
