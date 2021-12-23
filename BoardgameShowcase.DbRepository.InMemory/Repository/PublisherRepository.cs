@@ -1,15 +1,14 @@
 ﻿using BoardgameShowcase.Common.Extensions;
 using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     class PublisherRepository : GenericRepository<Publisher>, IPublisherRepository
     {
-        public PublisherRepository(ILogger<PublisherRepository> logger, IConfiguration configuration)
-            : base(logger, configuration)
+        public PublisherRepository(ILogger<PublisherRepository> logger)
+            : base(logger)
         {
         }
 

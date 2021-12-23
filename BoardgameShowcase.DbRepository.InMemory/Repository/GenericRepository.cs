@@ -3,7 +3,6 @@ using BoardgameShowcase.Common.Extensions;
 using BoardgameShowcase.Common.Utility;
 using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.DbRepository.InMemory.Repository
@@ -12,14 +11,13 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
     {
         protected static List<T> Entities { get; private set; } = default!;
 
-        protected GenericRepository(ILogger<GenericRepository<T>> logger, IConfiguration configuration)
+        protected GenericRepository(ILogger<GenericRepository<T>> logger)
             : base(logger)
         {
             if (Entities is null)
             {
-                string key = $"{typeof(T).Name.ToLower()}-data";
-                IEnumerable<T> values = configuration.GetSection(key).Get<IEnumerable<T>>();
-                Entities = new(values);
+                string filename = $"data/{typeof(T).Name.ToLower()}s.json";
+                Entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename);
             }
         }
 

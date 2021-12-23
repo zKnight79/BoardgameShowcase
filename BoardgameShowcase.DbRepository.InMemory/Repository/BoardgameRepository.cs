@@ -2,15 +2,14 @@
 using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
 using BoardgameShowcase.Model.Entity.Enumeration;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     class BoardgameRepository : GenericRepository<Boardgame>, IBoardgameRepository
     {
-        public BoardgameRepository(ILogger<BoardgameRepository> logger, IConfiguration configuration)
-            : base(logger, configuration)
+        public BoardgameRepository(ILogger<BoardgameRepository> logger)
+            : base(logger)
         {
         }
 

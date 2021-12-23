@@ -15,17 +15,17 @@ namespace BoardgameShowcase.Model.Entity
         public string PublisherId { get; set; } = default!;
         #region THEMES
         private readonly List<Theme> _themes = new();
-        public Theme[] Themes
+        public IEnumerable<Theme> Themes
         {
-            get => _themes.ToArray();
+            get => _themes;
             set => _themes.SetValues(value);
         }
         #endregion
         #region MECHANISMS
         private readonly List<Mechanism> _mechanisms = new();
-        public Mechanism[] Mechanisms
+        public IEnumerable<Mechanism> Mechanisms
         {
-            get => _mechanisms.ToArray();
+            get => _mechanisms;
             set => _mechanisms.SetValues(value);
         }
         #endregion

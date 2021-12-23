@@ -1,15 +1,14 @@
 ﻿using BoardgameShowcase.Common.Extensions;
 using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     class AuthorRepository : GenericRepository<Author>, IAuthorRepository
     {
-        public AuthorRepository(ILogger<AuthorRepository> logger, IConfiguration configuration)
-            : base(logger, configuration)
+        public AuthorRepository(ILogger<AuthorRepository> logger)
+            : base(logger)
         {
         }
 
