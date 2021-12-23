@@ -34,7 +34,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
             }
             return clonedEntities;
         }
-        
+
         public Task<IEnumerable<T>> FindAllAsync()
         {
             Logger.LogMethodCall();
