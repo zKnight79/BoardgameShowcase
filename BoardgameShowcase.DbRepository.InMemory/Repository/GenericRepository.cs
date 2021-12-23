@@ -3,22 +3,28 @@ using BoardgameShowcase.Common.Extensions;
 using BoardgameShowcase.Common.Utility;
 using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     abstract class GenericRepository<T> : Loggable<GenericRepository<T>>, IGenericRepository<T> where T : GenericEntity
     {
-        protected static List<T> Entities { get; } = new();
-        
-        protected GenericRepository(ILogger<GenericRepository<T>> logger)
+        protected static List<T> Entities { get; private set; } = default!;
+
+        protected GenericRepository(ILogger<GenericRepository<T>> logger, IConfiguration configuration)
             : base(logger)
         {
-            
+            if (Entities is null)
+            {
+                string key = $"{typeof(T).Name.ToLower()}-data";
+                IEnumerable<T> values = configuration.GetSection(key).Get<IEnumerable<T>>();
+                Entities = new(values);
+            }
         }
 
         protected abstract T CloneEntity(T entity);
-        
+
         public Task<IEnumerable<T>> FindAllAsync()
         {
             Logger.LogMethodCall();
@@ -28,7 +34,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
             {
                 entities.Add(CloneEntity(entity));
             }
-            
+
             return Task.FromResult<IEnumerable<T>>(entities);
         }
 
@@ -56,7 +62,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
                 newEntity.Id = StringUtil.NewGuid();
                 Entities.Add(newEntity);
             }
-            
+
             return Task.FromResult(newEntity?.Id);
         }
 
@@ -75,7 +81,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
                     updated = true;
                 }
             }
-            
+
             return Task.FromResult(updated);
         }
 
