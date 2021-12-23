@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Model", "BoardgameShowcase.Model\BoardgameShowcase.Model.csproj", "{452EC0EE-1412-401D-A822-E572196D2B72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Model", "BoardgameShowcase.Model\BoardgameShowcase.Model.csproj", "{452EC0EE-1412-401D-A822-E572196D2B72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Common", "BoardgameShowcase.Common\BoardgameShowcase.Common.csproj", "{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Common", "BoardgameShowcase.Common\BoardgameShowcase.Common.csproj", "{11A12CDE-1AE9-4F29-9DC7-36E3152B4B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.DbRepository", "BoardgameShowcase.DbRepository\BoardgameShowcase.DbRepository.csproj", "{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.DbRepository", "BoardgameShowcase.DbRepository\BoardgameShowcase.DbRepository.csproj", "{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.DbRepository.InMemory", "BoardgameShowcase.DbRepository.InMemory\BoardgameShowcase.DbRepository.InMemory.csproj", "{D1649840-C521-43CE-BC1E-BA29430788DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.DbRepository.InMemory.Test", "BoardgameShowcase.DbRepository.InMemory.Test\BoardgameShowcase.DbRepository.InMemory.Test.csproj", "{8F933889-789E-4D9C-9768-BA4F6313057E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27C24E85-BA94-40C7-87DF-CFE7E4985BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1649840-C521-43CE-BC1E-BA29430788DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1649840-C521-43CE-BC1E-BA29430788DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1649840-C521-43CE-BC1E-BA29430788DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1649840-C521-43CE-BC1E-BA29430788DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F933889-789E-4D9C-9768-BA4F6313057E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F933889-789E-4D9C-9768-BA4F6313057E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F933889-789E-4D9C-9768-BA4F6313057E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F933889-789E-4D9C-9768-BA4F6313057E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

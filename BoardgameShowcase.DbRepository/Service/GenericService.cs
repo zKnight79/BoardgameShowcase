@@ -11,7 +11,7 @@ namespace BoardgameShowcase.DbRepository.Service
     {
         private readonly IGenericRepository<T> _genericRepository;
 
-        public GenericService(ILogger<GenericService<T>> logger, IGenericRepository<T> genericRepository)
+        protected GenericService(ILogger<GenericService<T>> logger, IGenericRepository<T> genericRepository)
             : base(logger)
         {
             _genericRepository = genericRepository;

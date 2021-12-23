@@ -5,6 +5,13 @@
         Antiquity,
         Medieval,
         ScienceFiction,
-        Sciences
+        Sciences,
+        Economy,
+        Exploration,
+        Europe,
+        USA,
+        Trains,
+        Constructions,
+        Arts
     }
 }

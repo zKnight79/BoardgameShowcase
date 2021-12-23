@@ -7,6 +7,14 @@
         Draft,
         Tiles,
         Combination,
-        Powers
+        Powers,
+        Wargame,
+        Exploration,
+        Confrontation,
+        Cards,
+        Dice,
+        Collection,
+        SecretObjectives,
+        Placement
     }
 }
