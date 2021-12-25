@@ -7,27 +7,17 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     class PublisherRepository : GenericRepository<Publisher>, IPublisherRepository
     {
-        public PublisherRepository(ILogger<PublisherRepository> logger)
-            : base(logger)
+        public PublisherRepository(ILogger<PublisherRepository> logger, IDataAccess<Publisher> dataAccess)
+            : base(logger, dataAccess)
         {
-        }
-
-        protected override Publisher CloneEntity(Publisher entity)
-        {
-            return new()
-            {
-                Id = entity.Id,
-                Name = entity.Name,
-            };
         }
 
         public Task<IEnumerable<Publisher>> FindByNameAsync(string namePart)
         {
             Logger.LogMethodCall(namePart);
 
-            IEnumerable<Publisher> matchingPublishers = Entities.Where(x => x.Name.Contains(namePart, StringComparison.InvariantCultureIgnoreCase));
-            IEnumerable<Publisher> publishers = CloneEntities(matchingPublishers);
-
+            IEnumerable<Publisher> publishers = DataAccess.QueryEntities(x => x.Name.Contains(namePart, StringComparison.InvariantCultureIgnoreCase));
+            
             return Task.FromResult(publishers);
         }
     }

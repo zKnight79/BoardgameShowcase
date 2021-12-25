@@ -8,37 +8,17 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     class BoardgameRepository : GenericRepository<Boardgame>, IBoardgameRepository
     {
-        public BoardgameRepository(ILogger<BoardgameRepository> logger)
-            : base(logger)
+        public BoardgameRepository(ILogger<BoardgameRepository> logger, IDataAccess<Boardgame> dataAccess)
+            : base(logger, dataAccess)
         {
-        }
-
-        protected override Boardgame CloneEntity(Boardgame entity)
-        {
-            return new()
-            {
-                Id = entity.Id,
-                AuthorId = entity.AuthorId,
-                IllustratorId = entity.IllustratorId,
-                PublisherId = entity.PublisherId,
-                Title = entity.Title,
-                MinimumPlayerCount = entity.MinimumPlayerCount,
-                MaximumPlayerCount = entity.MaximumPlayerCount,
-                MinimumPlayerAge = entity.MinimumPlayerAge,
-                ApproximateGameTimeInMinutes = entity.ApproximateGameTimeInMinutes,
-                Themes = entity.Themes,
-                Mechanisms = entity.Mechanisms,
-                Category = entity.Category
-            };
         }
 
         public Task<IEnumerable<Boardgame>> FindByTitleAsync(string titlePart)
         {
             Logger.LogMethodCall(titlePart);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.Title.Contains(titlePart, StringComparison.InvariantCultureIgnoreCase));
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.Title.Contains(titlePart, StringComparison.InvariantCultureIgnoreCase));
+            
             return Task.FromResult(boardgames);
         }
 
@@ -46,9 +26,8 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(authorId);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.AuthorId == authorId);
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.AuthorId == authorId);
+            
             return Task.FromResult(boardgames);
         }
 
@@ -56,9 +35,8 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(illustratorId);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.IllustratorId == illustratorId);
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.IllustratorId == illustratorId);
+            
             return Task.FromResult(boardgames);
         }
 
@@ -66,9 +44,8 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(publisherId);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.PublisherId == publisherId);
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.PublisherId == publisherId);
+            
             return Task.FromResult(boardgames);
         }
 
@@ -76,9 +53,8 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(theme);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.Themes.Contains(theme));
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.Themes.Contains(theme));
+            
             return Task.FromResult(boardgames);
         }
 
@@ -86,9 +62,8 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(mechanism);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.Mechanisms.Contains(mechanism));
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.Mechanisms.Contains(mechanism));
+            
             return Task.FromResult(boardgames);
         }
 
@@ -96,9 +71,8 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(category);
 
-            IEnumerable<Boardgame> matchingBoardgames = Entities.Where(x => x.Category == category);
-            IEnumerable<Boardgame> boardgames = CloneEntities(matchingBoardgames);
-
+            IEnumerable<Boardgame> boardgames = DataAccess.QueryEntities(x => x.Category == category);
+            
             return Task.FromResult(boardgames);
         }
     }
