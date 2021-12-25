@@ -1,6 +1,5 @@
 ﻿using BoardgameShowcase.Common;
 using BoardgameShowcase.Common.Extensions;
-using BoardgameShowcase.Common.Utility;
 using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
 using Microsoft.Extensions.Logging;
@@ -9,35 +8,19 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     abstract class GenericRepository<T> : Loggable<GenericRepository<T>>, IGenericRepository<T> where T : GenericEntity
     {
-        protected static List<T> Entities { get; private set; } = default!;
+        protected IDataAccess<T> DataAccess { get; }
 
-        protected GenericRepository(ILogger<GenericRepository<T>> logger)
+        protected GenericRepository(ILogger<GenericRepository<T>> logger, IDataAccess<T> dataAccess)
             : base(logger)
         {
-            if (Entities is null)
-            {
-                string filename = $"data/{typeof(T).Name.ToLower()}s.json";
-                Entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename);
-            }
-        }
-
-        protected abstract T CloneEntity(T entity);
-
-        protected IEnumerable<T> CloneEntities(IEnumerable<T> entities)
-        {
-            List<T> clonedEntities = new();
-            foreach (T entity in entities)
-            {
-                clonedEntities.Add(CloneEntity(entity));
-            }
-            return clonedEntities;
+            DataAccess = dataAccess;
         }
 
         public Task<IEnumerable<T>> FindAllAsync()
         {
             Logger.LogMethodCall();
 
-            IEnumerable<T> entities = CloneEntities(Entities);
+            IEnumerable<T> entities = DataAccess.QueryEntities(e => true);
 
             return Task.FromResult(entities);
         }
@@ -46,11 +29,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(entityId);
 
-            T? entity = Entities.FirstOrDefault(x => x.Id == entityId);
-            if (entity is not null)
-            {
-                entity = CloneEntity(entity);
-            }
+            T? entity = DataAccess.QueryEntity(e => e.Id == entityId);
 
             return Task.FromResult(entity);
         }
@@ -59,32 +38,16 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(entity);
 
-            T? newEntity = null;
-            if (entity.IsNew)
-            {
-                newEntity = CloneEntity(entity);
-                newEntity.Id = StringUtil.NewGuid();
-                Entities.Add(newEntity);
-            }
+            string? newId = DataAccess.AddEntity(entity);
 
-            return Task.FromResult(newEntity?.Id);
+            return Task.FromResult(newId);
         }
 
         public Task<bool> UpdateAsync(T entity)
         {
             Logger.LogMethodCall(entity);
 
-            bool updated = false;
-
-            if (!entity.IsNew)
-            {
-                int index = Entities.IndexOf(entity);
-                if (index >= 0)
-                {
-                    Entities[index] = CloneEntity(entity);
-                    updated = true;
-                }
-            }
+            bool updated = DataAccess.UpdateEntity(entity);
 
             return Task.FromResult(updated);
         }
@@ -93,8 +56,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
         {
             Logger.LogMethodCall(entityId);
 
-            int removeCount = Entities.RemoveAll(e => e.Id == entityId);
-            bool deleted = removeCount > 0;
+            bool deleted = DataAccess.DeleteEntity(entityId);
 
             return Task.FromResult(deleted);
         }

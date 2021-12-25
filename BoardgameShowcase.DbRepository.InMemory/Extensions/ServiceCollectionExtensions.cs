@@ -9,6 +9,7 @@ namespace BoardgameShowcase.DbRepository.InMemory.Extensions
     {
         public static IServiceCollection AddBoardgameShowcaseDbRepositoryInMemory(this IServiceCollection services)
         {
+            services.AddSingleton(typeof(IDataAccess<>), typeof(DataAccess<>));
             services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IIllustratorRepository, IllustratorRepository>();
             services.AddTransient<IPublisherRepository, PublisherRepository>();

@@ -7,27 +7,17 @@ namespace BoardgameShowcase.DbRepository.InMemory.Repository
 {
     class IllustratorRepository : GenericRepository<Illustrator>, IIllustratorRepository
     {
-        public IllustratorRepository(ILogger<IllustratorRepository> logger)
-            : base(logger)
+        public IllustratorRepository(ILogger<IllustratorRepository> logger, IDataAccess<Illustrator> dataAccess)
+            : base(logger, dataAccess)
         {
-        }
-
-        protected override Illustrator CloneEntity(Illustrator entity)
-        {
-            return new()
-            {
-                Id = entity.Id,
-                Name = entity.Name,
-            };
         }
 
         public Task<IEnumerable<Illustrator>> FindByNameAsync(string namePart)
         {
             Logger.LogMethodCall(namePart);
 
-            IEnumerable<Illustrator> matchingIllustrators = Entities.Where(x => x.Name.Contains(namePart, StringComparison.InvariantCultureIgnoreCase));
-            IEnumerable<Illustrator> illustrators = CloneEntities(matchingIllustrators);
-
+            IEnumerable<Illustrator> illustrators = DataAccess.QueryEntities(x => x.Name.Contains(namePart, StringComparison.InvariantCultureIgnoreCase));
+            
             return Task.FromResult(illustrators);
         }
     }

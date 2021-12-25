@@ -2,7 +2,7 @@
 
 namespace BoardgameShowcase.Model.Entity
 {
-    public abstract class GenericEntity : GenericUiObject
+    public abstract class GenericEntity : GenericUiObject, ICloneable
     {
         public string? Id { get; set; }
 
@@ -32,6 +32,11 @@ namespace BoardgameShowcase.Model.Entity
             }
 
             return areEquals;
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
     }
 }
