@@ -7,16 +7,18 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
     public partial class BoardgameShowcaseQuery : ObjectGraphType<object>
     {
         private readonly IAuthorService _authorService;
+        private readonly IIllustratorService _illustratorService;
 
-        public BoardgameShowcaseQuery(IAuthorService authorService)
+        public BoardgameShowcaseQuery(IAuthorService authorService, IIllustratorService illustratorService)
         {
             Name = nameof(BoardgameShowcaseQuery);
             Description = "Query for Boardgame Showcase";
 
             _authorService = authorService;
+            _illustratorService = illustratorService;
 
             // Call private unherited instance parameterless methods returning void
-            IEnumerable<MethodInfo> methods = GetType().GetMethods(BindingFlags.Instance|BindingFlags.NonPublic)
+            IEnumerable<MethodInfo> methods = GetType().GetMethods(BindingFlags.Instance | BindingFlags.NonPublic)
                 .Where(x => x.DeclaringType == GetType() && x.ReturnType == typeof(void) && x.GetParameters().Length == 0);
             foreach (MethodInfo method in methods)
             {
