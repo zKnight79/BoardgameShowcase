@@ -1,5 +1,6 @@
 ﻿using BoardgameShowcase.Model.Service;
 using GraphQL.Types;
+using System.Reflection;
 
 namespace BoardgameShowcase.GraphQL.Server.GraphTypes
 {
@@ -14,7 +15,13 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
 
             _authorService = authorService;
 
-            AddAuthorQueries();
+            // Call private unherited instance parameterless methods returning void
+            IEnumerable<MethodInfo> methods = GetType().GetMethods(BindingFlags.Instance|BindingFlags.NonPublic)
+                .Where(x => x.DeclaringType == GetType() && x.ReturnType == typeof(void) && x.GetParameters().Length == 0);
+            foreach (MethodInfo method in methods)
+            {
+                _ = method.Invoke(this, null);
+            }
         }
     }
 }
