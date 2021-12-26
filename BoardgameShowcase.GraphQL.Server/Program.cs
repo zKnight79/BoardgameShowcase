@@ -13,6 +13,7 @@ IServiceCollection services = builder.Services;
 services.AddBoardgameShowcaseDbRepositoryInMemory();
 services.AddSingleton<BoardgameShowcaseQuery>();
 services.AddSingleton<BoardgameShowcaseMutation>();
+services.AddSingleton<BoardgameShowcaseSubscription>();
 services.AddSingleton<BoardgameShowcaseSchema>();
 services.AddGraphQL((options, provider) =>
     {
@@ -21,10 +22,13 @@ services.AddGraphQL((options, provider) =>
         options.UnhandledExceptionDelegate = ctx => logger.LogError("{Error} occurred", ctx.OriginalException.Message);
     })
     .AddSystemTextJson()
+    .AddWebSockets()
     .AddGraphTypes();
 
 WebApplication app = builder.Build();
 app.MapGet("/", () => "Welcome to the Boardgame Showcase GraphQL Server");
+app.UseWebSockets();
+app.UseGraphQLWebSockets<BoardgameShowcaseSchema>();
 app.UseGraphQL<BoardgameShowcaseSchema>();
 if (app.Environment.IsDevelopment())
 {

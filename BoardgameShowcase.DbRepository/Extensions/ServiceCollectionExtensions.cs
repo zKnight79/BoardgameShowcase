@@ -8,10 +8,10 @@ namespace BoardgameShowcase.DbRepository.Extensions
     {
         public static IServiceCollection AddBoardgameShowcaseDbRepository(this IServiceCollection services)
         {
-            services.AddTransient<IAuthorService, AuthorService>();
-            services.AddTransient<IIllustratorService, IllustratorService>();
-            services.AddTransient<IPublisherService, PublisherService>();
-            services.AddTransient<IBoardgameService, BoardgameService>();
+            services.AddSingleton<IAuthorService, AuthorService>();
+            services.AddSingleton<IIllustratorService, IllustratorService>();
+            services.AddSingleton<IPublisherService, PublisherService>();
+            services.AddSingleton<IBoardgameService, BoardgameService>();
             
             return services;
         }

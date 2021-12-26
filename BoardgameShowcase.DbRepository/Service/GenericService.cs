@@ -4,13 +4,17 @@ using BoardgameShowcase.DbRepository.Repository;
 using BoardgameShowcase.Model.Entity;
 using BoardgameShowcase.Model.Service;
 using Microsoft.Extensions.Logging;
+using System.Reactive.Linq;
+using System.Reactive.Subjects;
 
 namespace BoardgameShowcase.DbRepository.Service
 {
     abstract class GenericService<T> : Loggable<GenericService<T>>, IGenericService<T> where T : GenericEntity
     {
         private readonly IGenericRepository<T> _genericRepository;
-
+        private readonly ISubject<T> _entityAddedStream = new Subject<T>();
+        private readonly ISubject<T> _entityModifiedStream = new Subject<T>();
+        private readonly ISubject<T> _entityRemovedStream = new Subject<T>();
         protected GenericService(ILogger<GenericService<T>> logger, IGenericRepository<T> genericRepository)
             : base(logger)
         {
@@ -41,6 +45,10 @@ namespace BoardgameShowcase.DbRepository.Service
             if (newId is not null)
             {
                 addedEntity = await GetByIdAsync(newId);
+                if (addedEntity is not null)
+                {
+                    _entityAddedStream.OnNext(addedEntity);
+                }
             }
             else
             {
@@ -60,6 +68,10 @@ namespace BoardgameShowcase.DbRepository.Service
             if (updated)
             {
                 updatedEntity = await GetByIdAsync(entity.Id ?? string.Empty);
+                if(updatedEntity is not null)
+                {
+                    _entityModifiedStream.OnNext(updatedEntity);
+                }
             }
             else
             {
@@ -82,6 +94,7 @@ namespace BoardgameShowcase.DbRepository.Service
                 if (deleted)
                 {
                     removedEntity = toRemove;
+                    _entityRemovedStream.OnNext(removedEntity);
                 }
                 else
                 {
@@ -91,5 +104,11 @@ namespace BoardgameShowcase.DbRepository.Service
 
             return removedEntity;
         }
+
+        public IObservable<T> EntityAdded => _entityAddedStream;
+
+        public IObservable<T> EntityModified => _entityModifiedStream;
+
+        public IObservable<T> EntityRemoved => _entityRemovedStream;
     }
 }
