@@ -7,6 +7,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
     public partial class BoardgameShowcaseMutation : ObjectGraphType
     {
         private readonly IAuthorService _authorService;
+        private readonly IIllustratorService _illustratorService;
 
         public BoardgameShowcaseMutation(IServiceProvider serviceProvider)
         {
@@ -14,6 +15,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             Description = "Mutation for Boardgame Showcase";
 
             _authorService = serviceProvider.GetRequiredService<IAuthorService>();
+            _illustratorService = serviceProvider.GetRequiredService<IIllustratorService>();
 
             this.CallPrivateUnheritedParameterlessMethodsReturning(typeof(void));
         }
