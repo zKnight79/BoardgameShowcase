@@ -8,14 +8,20 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
     {
         private readonly IAuthorService _authorService;
         private readonly IIllustratorService _illustratorService;
+        private readonly IPublisherService _publisherService;
 
-        public BoardgameShowcaseQuery(IAuthorService authorService, IIllustratorService illustratorService)
+        public BoardgameShowcaseQuery(
+            IAuthorService authorService,
+            IIllustratorService illustratorService,
+            IPublisherService publisherService
+        )
         {
             Name = nameof(BoardgameShowcaseQuery);
             Description = "Query for Boardgame Showcase";
 
             _authorService = authorService;
             _illustratorService = illustratorService;
+            _publisherService = publisherService;
 
             // Call private unherited instance parameterless methods returning void
             IEnumerable<MethodInfo> methods = GetType().GetMethods(BindingFlags.Instance | BindingFlags.NonPublic)
