@@ -40,6 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BoardgameShowcase.DbRepository.InMemory\BoardgameShowcase.DbRepository.InMemory.csproj" />
+    <ProjectReference Include="..\BoardgameShowcase.Repository.InMemory\BoardgameShowcase.Repository.InMemory.csproj" />
   </ItemGroup>
 </Project>

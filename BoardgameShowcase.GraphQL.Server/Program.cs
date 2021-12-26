@@ -1,5 +1,5 @@
-using BoardgameShowcase.DbRepository.InMemory.Extensions;
 using BoardgameShowcase.GraphQL.Server.GraphTypes;
+using BoardgameShowcase.Repository.InMemory.Extensions;
 using GraphQL.Server;
 using Serilog;
 
