@@ -6,11 +6,13 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
     {
         public BoardgameShowcaseSchema(
             BoardgameShowcaseQuery boardgameShowcaseQuery,
-            BoardgameShowcaseMutation boardgameShowcaseMutation
+            BoardgameShowcaseMutation boardgameShowcaseMutation,
+            BoardgameShowcaseSubscription boardgameShowcaseSubscription
         )
         {
             Query = boardgameShowcaseQuery;
             Mutation = boardgameShowcaseMutation;
+            Subscription = boardgameShowcaseSubscription;
         }
     }
 }

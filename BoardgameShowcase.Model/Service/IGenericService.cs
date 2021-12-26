@@ -11,5 +11,8 @@ namespace BoardgameShowcase.Model.Service
         Task<T?> SaveAsync(T entity) => entity.IsNew ? AddAsync(entity) : ModifyAsync(entity);
         Task<T?> RemoveByIdAsync(string entityId);
         Task<T?> RemoveAsync(T entity) => RemoveByIdAsync(entity.Id!);
+        IObservable<T> EntityAdded { get; }
+        IObservable<T> EntityModified { get; }
+        IObservable<T> EntityRemoved { get; }
     }
 }

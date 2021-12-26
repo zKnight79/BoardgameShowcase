@@ -29,7 +29,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 resolve: context => _illustratorService.GetByIdAsync(context.GetArgument<string>("id"))
             );
         }
-        private void AddGetIllustratorByName()
+        private void AddGetIllustratorByNameQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<IllustratorType>>>>(
                 name: "illustratorsByName",
