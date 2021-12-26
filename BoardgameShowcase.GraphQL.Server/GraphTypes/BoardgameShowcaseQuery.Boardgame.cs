@@ -30,7 +30,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 resolve: context => _boardgameService.GetByIdAsync(context.GetArgument<string>("id"))
             );
         }
-        private void AddGetBoardgameByTitle()
+        private void AddGetBoardgameByTitleQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByTitle",
@@ -47,7 +47,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             );
         }
 
-        private void AddGetBoardgamesByAuthorId()
+        private void AddGetBoardgamesByAuthorIdQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByAuthorId",
@@ -64,7 +64,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             );
         }
 
-        private void AddGetBoardgamesByIllustratorId()
+        private void AddGetBoardgamesByIllustratorIdQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByIllustratorId",
@@ -81,7 +81,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             );
         }
 
-        private void AddGetBoardgamesByPublisherId()
+        private void AddGetBoardgamesByPublisherIdQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByPublisherId",
@@ -98,7 +98,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             );
         }
 
-        private void AddGetBoardgamesByCategory()
+        private void AddGetBoardgamesByCategoryQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByCategory",
@@ -115,7 +115,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             );
         }
 
-        private void AddGetBoardgamesByTheme()
+        private void AddGetBoardgamesByThemeQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByTheme",
@@ -132,7 +132,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             );
         }
 
-        private void AddGetBoardgamesByMechanism()
+        private void AddGetBoardgamesByMechanismQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<BoardgameType>>>>(
                 name: "boardgamesByMechanism",

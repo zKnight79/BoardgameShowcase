@@ -29,7 +29,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 resolve: context => _publisherService.GetByIdAsync(context.GetArgument<string>("id"))
             );
         }
-        private void AddGetPublisherByName()
+        private void AddGetPublisherByNameQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<PublisherType>>>>(
                 name: "publishersByName",
