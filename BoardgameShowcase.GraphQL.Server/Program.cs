@@ -12,6 +12,7 @@ builder.Host.UseSerilog(
 IServiceCollection services = builder.Services;
 services.AddBoardgameShowcaseDbRepositoryInMemory();
 services.AddSingleton<BoardgameShowcaseQuery>();
+services.AddSingleton<BoardgameShowcaseMutation>();
 services.AddSingleton<BoardgameShowcaseSchema>();
 services.AddGraphQL((options, provider) =>
     {
