@@ -1,42 +1,27 @@
-﻿using BoardgameShowcase.Model.Service;
+﻿using BoardgameShowcase.Common.Extensions;
+using BoardgameShowcase.Model.Service;
 using GraphQL.Types;
-using System.Reflection;
 
 namespace BoardgameShowcase.GraphQL.Server.GraphTypes
 {
-    public partial class BoardgameShowcaseQuery : ObjectGraphType<object>
+    public partial class BoardgameShowcaseQuery : ObjectGraphType
     {
         private readonly IAuthorService _authorService;
         private readonly IIllustratorService _illustratorService;
         private readonly IPublisherService _publisherService;
         private readonly IBoardgameService _boardgameService;
 
-        public BoardgameShowcaseQuery(
-            IAuthorService authorService,
-            IIllustratorService illustratorService,
-            IPublisherService publisherService,
-            IBoardgameService boardgameService
-        )
+        public BoardgameShowcaseQuery(IServiceProvider serviceProvider)
         {
             Name = nameof(BoardgameShowcaseQuery);
             Description = "Query for Boardgame Showcase";
 
-            _authorService = authorService;
-            _illustratorService = illustratorService;
-            _publisherService = publisherService;
-            _boardgameService = boardgameService;
+            _authorService = serviceProvider.GetRequiredService<IAuthorService>();
+            _illustratorService = serviceProvider.GetRequiredService<IIllustratorService>();
+            _publisherService = serviceProvider.GetRequiredService<IPublisherService>();
+            _boardgameService = serviceProvider.GetRequiredService<IBoardgameService>();
 
-            // Call private unherited instance parameterless methods returning void
-            IEnumerable<MethodInfo> methods = GetType().GetMethods(BindingFlags.Instance | BindingFlags.NonPublic)
-                .Where(
-                    x => x.DeclaringType == GetType()
-                    && x.ReturnType == typeof(void)
-                    && x.GetParameters().Length == 0
-                );
-            foreach (MethodInfo method in methods)
-            {
-                _ = method.Invoke(this, null);
-            }
+            this.CallPrivateUnheritedParameterlessMethodsReturning(typeof(void));
         }
     }
 }
