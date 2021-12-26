@@ -10,8 +10,8 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             Name = nameof(Illustrator);
             Description = "A boardgame illustrator";
 
-            Field(a => a.Id).Description("The unique identifier of the illustrator");
-            Field(a => a.Name).Description("The name of the illustrator");
+            Field(i => i.Id).Description("The unique identifier of the illustrator");
+            Field(i => i.Name).Description("The name of the illustrator");
         }
     }
 }

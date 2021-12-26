@@ -8,7 +8,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
         private void AddGetAllIllustratorsQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<IllustratorType>>>>(
-                name: "Illustrators",
+                name: "illustrators",
                 description: "Get all illustrators",
                 resolve: context => _illustratorService.GetAllAsync()
             );
@@ -16,7 +16,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
         private void AddGetIllustratorByIdQuery()
         {
             Field<IllustratorType>(
-                name: "Illustrator",
+                name: "illustrator",
                 description: "Get illustrator by ID",
                 arguments: new()
                 {
@@ -32,7 +32,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
         private void AddGetIllustratorByName()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<IllustratorType>>>>(
-                name: "IllustratorsByName",
+                name: "illustratorsByName",
                 description: "Get illustrators containing name part",
                 arguments: new()
                 {
