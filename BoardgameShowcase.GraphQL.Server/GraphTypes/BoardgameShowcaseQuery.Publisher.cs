@@ -8,7 +8,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
         private void AddGetAllPublishersQuery()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<PublisherType>>>>(
-                name: "Publishers",
+                name: "publishers",
                 description: "Get all publishers",
                 resolve: context => _publisherService.GetAllAsync()
             );
@@ -16,7 +16,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
         private void AddGetPublisherByIdQuery()
         {
             Field<PublisherType>(
-                name: "Publisher",
+                name: "publisher",
                 description: "Get publisher by ID",
                 arguments: new()
                 {
@@ -32,7 +32,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
         private void AddGetPublisherByName()
         {
             Field<NonNullGraphType<ListGraphType<NonNullGraphType<PublisherType>>>>(
-                name: "PublishersByName",
+                name: "publishersByName",
                 description: "Get publishers containing name part",
                 arguments: new()
                 {
