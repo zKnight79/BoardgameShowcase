@@ -101,5 +101,47 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscription {
                 return ResourceManager.GetString("AuthorRemoved", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à subscription IllustratorAdded {
+        ///  illustrator: illustratorAdded {
+        ///    id
+        ///    name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorAdded {
+            get {
+                return ResourceManager.GetString("IllustratorAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à subscription IllustratorModified {
+        ///  illustrator: illustratorModified {
+        ///    id
+        ///    name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorModified {
+            get {
+                return ResourceManager.GetString("IllustratorModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à subscription IllustratorRemoved {
+        ///  illustrator: illustratorRemoved {
+        ///    id
+        ///    name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorRemoved {
+            get {
+                return ResourceManager.GetString("IllustratorRemoved", resourceCulture);
+            }
+        }
     }
 }

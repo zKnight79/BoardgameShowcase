@@ -6,13 +6,19 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
     {
         private readonly ILogger<Worker> _logger;
         private readonly IAuthorSubscription _authorSubscription;
+        private readonly IIllustratorSubscription _illustratorSubscription;
 
         private List<IDisposable> _subscriptions = new();
 
-        public Worker(ILogger<Worker> logger, IAuthorSubscription authorSubscription)
+        public Worker(
+            ILogger<Worker> logger,
+            IAuthorSubscription authorSubscription,
+            IIllustratorSubscription illustratorSubscription
+        )
         {
             _logger = logger;
             _authorSubscription = authorSubscription;
+            _illustratorSubscription = illustratorSubscription;
         }
 
         public override void Dispose()
@@ -34,6 +40,10 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
             _subscriptions.Add(SuscribeAuthorAdded());
             _subscriptions.Add(SuscribeAuthorModified());
             _subscriptions.Add(SuscribeAuthorRemoved());
+
+            _subscriptions.Add(SuscribeIllustratorAdded());
+            _subscriptions.Add(SuscribeIllustratorModified());
+            _subscriptions.Add(SuscribeIllustratorRemoved());
         }
 
         private IDisposable SuscribeAuthorAdded()
@@ -55,6 +65,28 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
             return _authorSubscription.SubscribeRemoved(author =>
             {
                 _logger.LogInformation($"Author removed : Id = {author.Id}, Name = {author.Name}");
+            });
+        }
+
+        private IDisposable SuscribeIllustratorAdded()
+        {
+            return _illustratorSubscription.SubscribeAdded(illustrator =>
+            {
+                _logger.LogInformation($"Illustrator added : Id = {illustrator.Id}, Name = {illustrator.Name}");
+            });
+        }
+        private IDisposable SuscribeIllustratorModified()
+        {
+            return _illustratorSubscription.SubscribeModified(illustrator =>
+            {
+                _logger.LogInformation($"Illustrator modified : Id = {illustrator.Id}, Name = {illustrator.Name}");
+            });
+        }
+        private IDisposable SuscribeIllustratorRemoved()
+        {
+            return _illustratorSubscription.SubscribeRemoved(illustrator =>
+            {
+                _logger.LogInformation($"Illustrator removed : Id = {illustrator.Id}, Name = {illustrator.Name}");
             });
         }
     }
