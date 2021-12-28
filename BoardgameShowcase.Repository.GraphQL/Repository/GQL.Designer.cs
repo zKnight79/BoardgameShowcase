@@ -148,5 +148,94 @@ namespace BoardgameShowcase.Repository.GraphQL.Repository {
                 return ResourceManager.GetString("AuthorUpdate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query GetIllustratorById($illustratorId: String!) {
+        ///  illustrator(id: $illustratorId) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string Illustrator {
+            get {
+                return ResourceManager.GetString("Illustrator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation CreateIllustrator($name: String!) {
+        ///  illustrator: saveAuthor(inputIllustrator: {
+        ///    name: $name
+        ///  }) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorCreate {
+            get {
+                return ResourceManager.GetString("IllustratorCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation DeleteIllustrator($illustratorId: String!) {
+        ///  illustrator: removeIllustrator(illustratorId: $illustratorId) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorDelete {
+            get {
+                return ResourceManager.GetString("IllustratorDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query GetAllIllustrators {
+        ///  illustrators {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string Illustrators {
+            get {
+                return ResourceManager.GetString("Illustrators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query IllustratorsLike($namePart: String!) {
+        ///  illustrators: illustratorsByName(namePart: $namePart) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorsByName {
+            get {
+                return ResourceManager.GetString("IllustratorsByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation UpdateIllustrator($id: String!, $name: String!) {
+        ///  illustrator: saveIllustrator(inputIllustrator: {
+        ///    id: $id
+        ///    name: $name
+        ///  }) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string IllustratorUpdate {
+            get {
+                return ResourceManager.GetString("IllustratorUpdate", resourceCulture);
+            }
+        }
     }
 }

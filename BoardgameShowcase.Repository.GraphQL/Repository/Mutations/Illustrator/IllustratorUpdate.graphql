@@ -1,0 +1,9 @@
+﻿mutation UpdateIllustrator($id: String!, $name: String!) {
+  illustrator: saveIllustrator(inputIllustrator: {
+    id: $id
+    name: $name
+  }) {
+	id
+	name
+  }
+}

@@ -1,0 +1,6 @@
+﻿query GetIllustratorById($illustratorId: String!) {
+  illustrator(id: $illustratorId) {
+	id
+	name
+  }
+}

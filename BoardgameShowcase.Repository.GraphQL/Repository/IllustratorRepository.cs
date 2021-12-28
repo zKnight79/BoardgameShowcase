@@ -1,5 +1,7 @@
 ﻿using BoardgameShowcase.Common;
+using BoardgameShowcase.Common.Extensions;
 using BoardgameShowcase.Model.Entity;
+using BoardgameShowcase.Repository.GraphQL.Repository.Response;
 using BoardgameShowcase.Repository.Repository;
 using Microsoft.Extensions.Logging;
 
@@ -15,34 +17,58 @@ namespace BoardgameShowcase.Repository.GraphQL.Repository
             _dataAccess = dataAccess;
         }
 
-        public Task<IEnumerable<Illustrator>> FindAllAsync()
+        public async Task<IEnumerable<Illustrator>> FindAllAsync()
         {
-            throw new NotImplementedException();
+            Logger.LogMethodCall();
+
+            IllustratorsResponse response = await _dataAccess.Query<IllustratorsResponse>(GQL.Illustrators);
+
+            return response.Illustrators;
         }
 
-        public Task<Illustrator?> FindByIdAsync(string illustratorId)
+        public async Task<Illustrator?> FindByIdAsync(string illustratorId)
         {
-            throw new NotImplementedException();
+            Logger.LogMethodCall(illustratorId);
+
+            IllustratorResponse response = await _dataAccess.Query<IllustratorResponse>(GQL.Illustrator, new { illustratorId });
+
+            return response.Illustrator;
         }
 
-        public Task<IEnumerable<Illustrator>> FindByNameAsync(string namePart)
+        public async Task<string?> InsertAsync(Illustrator illustrator)
         {
-            throw new NotImplementedException();
+            Logger.LogMethodCall(illustrator);
+
+            IllustratorResponse response = await _dataAccess.Mutation<IllustratorResponse>(GQL.IllustratorCreate, illustrator);
+
+            return response.Illustrator?.Id;
         }
 
-        public Task<string?> InsertAsync(Illustrator illustrator)
+        public async Task<bool> UpdateAsync(Illustrator illustrator)
         {
-            throw new NotImplementedException();
+            Logger.LogMethodCall(illustrator);
+
+            IllustratorResponse response = await _dataAccess.Mutation<IllustratorResponse>(GQL.IllustratorUpdate, illustrator);
+
+            return response.Illustrator is not null;
         }
 
-        public Task<bool> UpdateAsync(Illustrator illustrator)
+        public async Task<bool> DeleteByIdAsync(string illustratorId)
         {
-            throw new NotImplementedException();
+            Logger.LogMethodCall(illustratorId);
+
+            IllustratorResponse response = await _dataAccess.Mutation<IllustratorResponse>(GQL.IllustratorDelete, new { illustratorId });
+
+            return response.Illustrator is not null;
         }
 
-        public Task<bool> DeleteByIdAsync(string illustratorId)
+        public async Task<IEnumerable<Illustrator>> FindByNameAsync(string namePart)
         {
-            throw new NotImplementedException();
+            Logger.LogMethodCall(namePart);
+
+            IllustratorsResponse response = await _dataAccess.Query<IllustratorsResponse>(GQL.IllustratorsByName, new { namePart });
+
+            return response.Illustrators;
         }
     }
 }
