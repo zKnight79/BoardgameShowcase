@@ -136,4 +136,13 @@
   <data name="IllustratorRemoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>subscriptions\illustrator\illustratorremoved.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="PublisherAdded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>subscriptions\publisher\publisheradded.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PublisherModified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>subscriptions\publisher\publishermodified.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PublisherRemoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>subscriptions\publisher\publisherremoved.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

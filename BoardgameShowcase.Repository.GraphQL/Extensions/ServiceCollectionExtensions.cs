@@ -16,6 +16,7 @@ namespace BoardgameShowcase.Repository.GraphQL.Extensions
             services.AddTransient<IIllustratorRepository, IllustratorRepository>();
             services.AddTransient<IIllustratorSubscription, IllustratorSubscription>();
             services.AddTransient<IPublisherRepository, PublisherRepository>();
+            services.AddTransient<IPublisherSubscription, PublisherSubscription>();
             services.AddTransient<IBoardgameRepository, BoardgameRepository>();
 
             services.AddBoardgameShowcaseRepository();

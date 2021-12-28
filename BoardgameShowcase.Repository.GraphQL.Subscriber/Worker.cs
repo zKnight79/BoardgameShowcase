@@ -7,18 +7,21 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
         private readonly ILogger<Worker> _logger;
         private readonly IAuthorSubscription _authorSubscription;
         private readonly IIllustratorSubscription _illustratorSubscription;
+        private readonly IPublisherSubscription _publisherSubscription;
 
         private List<IDisposable> _subscriptions = new();
 
         public Worker(
             ILogger<Worker> logger,
             IAuthorSubscription authorSubscription,
-            IIllustratorSubscription illustratorSubscription
+            IIllustratorSubscription illustratorSubscription,
+            IPublisherSubscription publisherSubscription
         )
         {
             _logger = logger;
             _authorSubscription = authorSubscription;
             _illustratorSubscription = illustratorSubscription;
+            _publisherSubscription = publisherSubscription;
         }
 
         public override void Dispose()
@@ -44,6 +47,10 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
             _subscriptions.Add(SuscribeIllustratorAdded());
             _subscriptions.Add(SuscribeIllustratorModified());
             _subscriptions.Add(SuscribeIllustratorRemoved());
+
+            _subscriptions.Add(SuscribePublisherAdded());
+            _subscriptions.Add(SuscribePublisherModified());
+            _subscriptions.Add(SuscribePublisherRemoved());
         }
 
         private IDisposable SuscribeAuthorAdded()
@@ -87,6 +94,28 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
             return _illustratorSubscription.SubscribeRemoved(illustrator =>
             {
                 _logger.LogInformation($"Illustrator removed : Id = {illustrator.Id}, Name = {illustrator.Name}");
+            });
+        }
+
+        private IDisposable SuscribePublisherAdded()
+        {
+            return _publisherSubscription.SubscribeAdded(publisher =>
+            {
+                _logger.LogInformation($"Publisher added : Id = {publisher.Id}, Name = {publisher.Name}");
+            });
+        }
+        private IDisposable SuscribePublisherModified()
+        {
+            return _publisherSubscription.SubscribeModified(publisher =>
+            {
+                _logger.LogInformation($"Publisher modified : Id = {publisher.Id}, Name = {publisher.Name}");
+            });
+        }
+        private IDisposable SuscribePublisherRemoved()
+        {
+            return _publisherSubscription.SubscribeRemoved(publisher =>
+            {
+                _logger.LogInformation($"Publisher removed : Id = {publisher.Id}, Name = {publisher.Name}");
             });
         }
     }

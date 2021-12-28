@@ -1,0 +1,6 @@
+﻿subscription PublisherModified {
+  publisher: publisherModified {
+    id
+    name
+  }
+}
