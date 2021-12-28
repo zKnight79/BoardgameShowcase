@@ -6,7 +6,7 @@ namespace BoardgameShowcase.Repository.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddBoardgameShowcaseDbRepository(this IServiceCollection services)
+        public static IServiceCollection AddBoardgameShowcaseRepository(this IServiceCollection services)
         {
             services.AddSingleton<IAuthorService, AuthorService>();
             services.AddSingleton<IIllustratorService, IllustratorService>();
