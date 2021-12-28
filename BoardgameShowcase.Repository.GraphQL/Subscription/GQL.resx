@@ -127,6 +127,15 @@
   <data name="AuthorRemoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>subscriptions\author\authorremoved.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="BoardgameAdded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>subscriptions\boardgame\boardgameadded.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgameModified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>subscriptions\boardgame\boardgamemodified.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgameRemoved" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>subscriptions\boardgame\boardgameremoved.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="IllustratorAdded" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>subscriptions\illustrator\illustratoradded.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

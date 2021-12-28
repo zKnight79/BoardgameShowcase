@@ -8,20 +8,17 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
         private readonly IAuthorSubscription _authorSubscription;
         private readonly IIllustratorSubscription _illustratorSubscription;
         private readonly IPublisherSubscription _publisherSubscription;
+        private readonly IBoardgameSubscription _boardgameSubscription;
 
         private List<IDisposable> _subscriptions = new();
 
-        public Worker(
-            ILogger<Worker> logger,
-            IAuthorSubscription authorSubscription,
-            IIllustratorSubscription illustratorSubscription,
-            IPublisherSubscription publisherSubscription
-        )
+        public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
-            _authorSubscription = authorSubscription;
-            _illustratorSubscription = illustratorSubscription;
-            _publisherSubscription = publisherSubscription;
+            _authorSubscription = serviceProvider.GetRequiredService<IAuthorSubscription>();
+            _illustratorSubscription = serviceProvider.GetRequiredService<IIllustratorSubscription>();
+            _publisherSubscription = serviceProvider.GetRequiredService<IPublisherSubscription>();
+            _boardgameSubscription = serviceProvider.GetRequiredService<IBoardgameSubscription>();
         }
 
         public override void Dispose()
@@ -51,6 +48,10 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
             _subscriptions.Add(SuscribePublisherAdded());
             _subscriptions.Add(SuscribePublisherModified());
             _subscriptions.Add(SuscribePublisherRemoved());
+
+            _subscriptions.Add(SuscribeBoardgameAdded());
+            _subscriptions.Add(SuscribeBoardgameModified());
+            _subscriptions.Add(SuscribeBoardgameRemoved());
         }
 
         private IDisposable SuscribeAuthorAdded()
@@ -116,6 +117,28 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
             return _publisherSubscription.SubscribeRemoved(publisher =>
             {
                 _logger.LogInformation($"Publisher removed : Id = {publisher.Id}, Name = {publisher.Name}");
+            });
+        }
+
+        private IDisposable SuscribeBoardgameAdded()
+        {
+            return _boardgameSubscription.SubscribeAdded(boardgame =>
+            {
+                _logger.LogInformation($"Boardgame added : Id = {boardgame.Id}, Title = {boardgame.Title}");
+            });
+        }
+        private IDisposable SuscribeBoardgameModified()
+        {
+            return _boardgameSubscription.SubscribeModified(boardgame =>
+            {
+                _logger.LogInformation($"Boardgame modified : Id = {boardgame.Id}, Title = {boardgame.Title}");
+            });
+        }
+        private IDisposable SuscribeBoardgameRemoved()
+        {
+            return _boardgameSubscription.SubscribeRemoved(boardgame =>
+            {
+                _logger.LogInformation($"Boardgame removed : Id = {boardgame.Id}, Title = {boardgame.Title}");
             });
         }
     }
