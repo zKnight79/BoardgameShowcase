@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repositor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repository.GraphQL", "BoardgameShowcase.Repository.GraphQL\BoardgameShowcase.Repository.GraphQL.csproj", "{D94BD66A-6540-43C8-BD83-A7C79DE5F641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Repository.GraphQL.Worker", "BoardgameShowcase.Repository.GraphQL.Worker\BoardgameShowcase.Repository.GraphQL.Worker.csproj", "{E2F50BFA-20A5-40EB-A118-7250D08AB509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repository.GraphQL.Worker", "BoardgameShowcase.Repository.GraphQL.Worker\BoardgameShowcase.Repository.GraphQL.Worker.csproj", "{E2F50BFA-20A5-40EB-A118-7250D08AB509}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Repository.GraphQL.Subscriber", "BoardgameShowcase.Repository.GraphQL.Subscriber\BoardgameShowcase.Repository.GraphQL.Subscriber.csproj", "{10C31551-DFE6-415F-ABC6-AEE33F469474}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E2F50BFA-20A5-40EB-A118-7250D08AB509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2F50BFA-20A5-40EB-A118-7250D08AB509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2F50BFA-20A5-40EB-A118-7250D08AB509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C31551-DFE6-415F-ABC6-AEE33F469474}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C31551-DFE6-415F-ABC6-AEE33F469474}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C31551-DFE6-415F-ABC6-AEE33F469474}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C31551-DFE6-415F-ABC6-AEE33F469474}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

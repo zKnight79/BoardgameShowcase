@@ -58,5 +58,25 @@ namespace BoardgameShowcase.Repository.GraphQL.Repository
                 return default!;
             }
         }
+
+        public IDisposable Subscription<T>(string gqlSubscription, Action<T> action, object? gqlVariables)
+        {
+            GraphQLRequest graphQLRequest = new()
+            {
+                Query = gqlSubscription,
+                Variables = gqlVariables
+            };
+
+            try
+            {
+                IObservable<GraphQLResponse<T>> subscriptionStream = _graphQLClient.CreateSubscriptionStream<T>(graphQLRequest);
+                return subscriptionStream.Subscribe(response => action(response.Data));
+            }
+            catch (Exception ex)
+            {
+                Logger.LogWarning(ex, "GraphQL subscription error !");
+                return default!;
+            }
+        }
     }
 }

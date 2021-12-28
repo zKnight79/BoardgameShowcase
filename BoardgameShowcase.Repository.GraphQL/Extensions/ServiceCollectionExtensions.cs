@@ -1,5 +1,6 @@
 ﻿using BoardgameShowcase.Repository.Extensions;
 using BoardgameShowcase.Repository.GraphQL.Repository;
+using BoardgameShowcase.Repository.GraphQL.Subscription;
 using BoardgameShowcase.Repository.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,7 @@ namespace BoardgameShowcase.Repository.GraphQL.Extensions
         {
             services.AddSingleton<IDataAccess, DataAccess>();
             services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IAuthorSubscription, AuthorSubscription>();
             services.AddTransient<IIllustratorRepository, IllustratorRepository>();
             services.AddTransient<IPublisherRepository, PublisherRepository>();
             services.AddTransient<IBoardgameRepository, BoardgameRepository>();

@@ -22,10 +22,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>GQL.resx</DependentUpon>
     </Compile>
+    <Compile Update="Subscription\GQL.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GQL.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Repository\GQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Subscription\GQL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GQL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
