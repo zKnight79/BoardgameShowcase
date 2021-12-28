@@ -136,6 +136,42 @@
   <data name="AuthorUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>mutations\author\authorupdate.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Boardgame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgame.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgameCreate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>mutations\boardgame\boardgamecreate.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgameDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>mutations\boardgame\boardgamedelete.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Boardgames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgames.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByAuthor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbyauthor.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByCategory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbycategory.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByIllustrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbyillustrator.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByMechanism" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbymechanism.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByPublisher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbypublisher.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbytheme.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgamesByTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\boardgame\boardgamesbytitle.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardgameUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>mutations\boardgame\boardgameupdate.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Illustrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\illustrator\illustrator.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

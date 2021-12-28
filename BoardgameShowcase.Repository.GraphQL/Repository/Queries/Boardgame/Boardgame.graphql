@@ -1,0 +1,16 @@
+﻿query GetBoardgameById($boardgameId: String!) {
+  boardgame(id: $boardgameId) {
+    id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

@@ -1,0 +1,16 @@
+﻿query BoardgamesByAuthor($authorId: String!) {
+  boardgames: boardgamesByAuthorId(authorId: $authorId) {
+	id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

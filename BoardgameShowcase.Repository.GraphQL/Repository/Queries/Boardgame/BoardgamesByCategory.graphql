@@ -1,0 +1,16 @@
+﻿query BoardgamesByCategory($category: Category!) {
+  boardgames: boardgamesByCategory(category: $category) {
+	id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

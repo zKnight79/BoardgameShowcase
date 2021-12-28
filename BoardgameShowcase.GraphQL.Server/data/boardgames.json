@@ -30,7 +30,7 @@
     "ApproximateGameTimeInMinutes": 90,
     "MinimumPlayerAge": 12,
     "Themes": [
-      "ScienceFiction",
+      "Science_Fiction",
       "Sciences"
     ],
     "Mechanisms": [
@@ -74,7 +74,7 @@
     "ApproximateGameTimeInMinutes": 30,
     "MinimumPlayerAge": 8,
     "Themes": [
-      "ScienceFiction"
+      "Science_Fiction"
     ],
     "Mechanisms": [
       "Confrontation",
@@ -99,7 +99,7 @@
     ],
     "Mechanisms": [
       "Collection",
-      "SecretObjectives"
+      "Secret_Objectives"
     ],
     "Category": "Racing"
   },

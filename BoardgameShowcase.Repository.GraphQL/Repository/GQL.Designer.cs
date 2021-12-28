@@ -150,6 +150,302 @@ namespace BoardgameShowcase.Repository.GraphQL.Repository {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à query GetBoardgameById($boardgameId: String!) {
+        ///  boardgame(id: $boardgameId) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string Boardgame {
+            get {
+                return ResourceManager.GetString("Boardgame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation CreateBoardgame(
+        ///  $title: String!
+        ///  $authorId: String!
+        ///  $illustratorId: String!
+        ///  $publisherId: String!
+        ///  $minimumPlayerCount: Int!
+        ///  $maximumPlayerCount: Int!
+        ///  $minimumPlayerAge: Int!
+        ///  $approximateGameTimeInMinutes: Int!
+        ///  $category: Category!
+        ///  $themes: [Theme!]!
+        ///  $mechanisms: [Mechanism!]!
+        ///) {
+        ///  boardgame: saveBoardgame(inputBoardgame: {
+        ///    title: $title
+        ///    authorId: $authorId
+        ///    illustratorId: $illustratorId
+        ///    publisherId: $publisherId
+        ///    minimumPlayerCount: $minimu [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string BoardgameCreate {
+            get {
+                return ResourceManager.GetString("BoardgameCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation DeleteBoardgame($boardgameId: String!) {
+        ///  boardgame: removeBoardgame(boardgameId: $boardgameId) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgameDelete {
+            get {
+                return ResourceManager.GetString("BoardgameDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query GetAllBoargames {
+        ///  boargames {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string Boardgames {
+            get {
+                return ResourceManager.GetString("Boardgames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesByAuthor($authorId: String!) {
+        ///  boardgames: boardgamesByAuthorId(authorId: $authorId) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByAuthor {
+            get {
+                return ResourceManager.GetString("BoardgamesByAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesByCategory($category: Category!) {
+        ///  boardgames: boardgamesByCategory(category: $category) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByCategory {
+            get {
+                return ResourceManager.GetString("BoardgamesByCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesByIllustrator($illustratorId: String!) {
+        ///  boardgames: boardgamesByIllustratorId(illustratorId: $illustratorId) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByIllustrator {
+            get {
+                return ResourceManager.GetString("BoardgamesByIllustrator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesByMechanism($mechanism: Mechanism!) {
+        ///  boardgames: boardgamesByMechanism(mechanism: $mechanism) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByMechanism {
+            get {
+                return ResourceManager.GetString("BoardgamesByMechanism", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesByPublisher($publisherId: String!) {
+        ///  boardgames: boardgamesByPublisherId(publisherId: $publisherId) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByPublisher {
+            get {
+                return ResourceManager.GetString("BoardgamesByPublisher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesByTheme($theme: Theme!) {
+        ///  boardgames: boardgamesByTheme(theme: $theme) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByTheme {
+            get {
+                return ResourceManager.GetString("BoardgamesByTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query BoardgamesLike($titlePart: String!) {
+        ///  boardgames: boardgamesByTitle(namePart: $titlePart) {
+        ///	id
+        ///    title
+        ///    authorId
+        ///    illustratorId
+        ///    publisherId
+        ///    minimumPlayerCount
+        ///    maximumPlayerCount
+        ///    minimumPlayerAge
+        ///    approximateGameTimeInMinutes
+        ///    category
+        ///    themes
+        ///    mechanisms
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string BoardgamesByTitle {
+            get {
+                return ResourceManager.GetString("BoardgamesByTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation UpdateBoardgame(
+        ///  $id: String!
+        ///  $title: String!
+        ///  $authorId: String!
+        ///  $illustratorId: String!
+        ///  $publisherId: String!
+        ///  $minimumPlayerCount: Int!
+        ///  $maximumPlayerCount: Int!
+        ///  $minimumPlayerAge: Int!
+        ///  $approximateGameTimeInMinutes: Int!
+        ///  $category: Category!
+        ///  $themes: [Theme!]!
+        ///  $mechanisms: [Mechanism!]!
+        ///) {
+        ///  boardgame: saveBoardgame(inputBoardgame: {
+        ///    id: $id
+        ///    title: $title
+        ///    authorId: $authorId
+        ///    illustratorId: $illustratorId
+        ///    publisherId: $publisherId
+        ///   [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string BoardgameUpdate {
+            get {
+                return ResourceManager.GetString("BoardgameUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à query GetIllustratorById($illustratorId: String!) {
         ///  illustrator(id: $illustratorId) {
         ///	id

@@ -12,6 +12,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<IJob, AuthorJob>();
         services.AddTransient<IJob, IllustratorJob>();
         services.AddTransient<IJob, PublisherJob>();
+        services.AddTransient<IJob, BoardgameJob>();
         services.AddHostedService<Worker>();
     })
     .Build();

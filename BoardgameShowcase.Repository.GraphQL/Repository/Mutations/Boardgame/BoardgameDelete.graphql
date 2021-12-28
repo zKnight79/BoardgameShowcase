@@ -1,0 +1,16 @@
+﻿mutation DeleteBoardgame($boardgameId: String!) {
+  boardgame: removeBoardgame(boardgameId: $boardgameId) {
+    id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

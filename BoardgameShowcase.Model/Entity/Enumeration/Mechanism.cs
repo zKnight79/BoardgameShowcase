@@ -14,7 +14,7 @@
         Cards,
         Dice,
         Collection,
-        SecretObjectives,
+        Secret_Objectives,
         Placement
     }
 }
