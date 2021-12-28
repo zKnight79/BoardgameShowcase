@@ -9,6 +9,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
         services.AddBoardgameShowcaseRepositoryGraphQL();
+        services.AddTransient<IJob, AuthorJob>();
         services.AddHostedService<Worker>();
     })
     .Build();
