@@ -1,0 +1,9 @@
+﻿mutation UpdatePublisher($id: String!, $name: String!) {
+  publisher: savePublisher(inputPublisher: {
+    id: $id
+    name: $name
+  }) {
+	id
+	name
+  }
+}

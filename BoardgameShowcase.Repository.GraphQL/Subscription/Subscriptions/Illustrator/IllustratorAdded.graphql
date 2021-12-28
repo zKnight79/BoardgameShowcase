@@ -1,0 +1,6 @@
+﻿subscription IllustratorAdded {
+  illustrator: illustratorAdded {
+    id
+    name
+  }
+}

@@ -1,0 +1,6 @@
+﻿query GetAllPublishers {
+  publishers {
+	id
+	name
+  }
+}

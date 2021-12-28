@@ -1,0 +1,6 @@
+﻿query PublishersLike($namePart: String!) {
+  publishers: publishersByName(namePart: $namePart) {
+	id
+	name
+  }
+}

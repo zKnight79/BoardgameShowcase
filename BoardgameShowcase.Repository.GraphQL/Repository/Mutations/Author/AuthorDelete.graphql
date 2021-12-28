@@ -1,0 +1,6 @@
+﻿mutation DeleteAuthor($authorId: String!) {
+  author: removeAuthor(authorId: $authorId) {
+	id
+	name
+  }
+}

@@ -1,0 +1,6 @@
+﻿subscription AuthorAdded {
+  author: authorAdded {
+    id
+    name
+  }
+}

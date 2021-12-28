@@ -10,7 +10,7 @@ builder.Host.UseSerilog(
 );
 
 IServiceCollection services = builder.Services;
-services.AddBoardgameShowcaseDbRepositoryInMemory();
+services.AddBoardgameShowcaseRepositoryInMemory();
 services.AddSingleton<BoardgameShowcaseQuery>();
 services.AddSingleton<BoardgameShowcaseMutation>();
 services.AddSingleton<BoardgameShowcaseSubscription>();

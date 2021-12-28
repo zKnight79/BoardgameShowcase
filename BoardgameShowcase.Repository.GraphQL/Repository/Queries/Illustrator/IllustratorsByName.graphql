@@ -1,0 +1,6 @@
+﻿query IllustratorsLike($namePart: String!) {
+  illustrators: illustratorsByName(namePart: $namePart) {
+	id
+	name
+  }
+}

@@ -1,0 +1,6 @@
+﻿query GetAllIllustrators {
+  illustrators {
+	id
+	name
+  }
+}

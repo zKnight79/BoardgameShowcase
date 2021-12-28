@@ -1,0 +1,6 @@
+﻿query GetPublisherById($publisherId: String!) {
+  publisher(id: $publisherId) {
+	id
+	name
+  }
+}

@@ -1,0 +1,16 @@
+﻿query BoardgamesByMechanism($mechanism: Mechanism!) {
+  boardgames: boardgamesByMechanism(mechanism: $mechanism) {
+	id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

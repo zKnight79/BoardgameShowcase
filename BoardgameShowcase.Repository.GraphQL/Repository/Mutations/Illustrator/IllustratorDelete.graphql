@@ -1,0 +1,6 @@
+﻿mutation DeleteIllustrator($illustratorId: String!) {
+  illustrator: removeIllustrator(illustratorId: $illustratorId) {
+	id
+	name
+  }
+}

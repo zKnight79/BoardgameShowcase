@@ -1,0 +1,16 @@
+﻿subscription BoardgameAdded {
+  boardgame: boardgameAdded {
+    id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

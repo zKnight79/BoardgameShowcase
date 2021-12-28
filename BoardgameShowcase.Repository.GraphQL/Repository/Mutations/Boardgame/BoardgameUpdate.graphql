@@ -1,0 +1,42 @@
+﻿mutation UpdateBoardgame(
+  $id: String!
+  $title: String!
+  $authorId: String!
+  $illustratorId: String!
+  $publisherId: String!
+  $minimumPlayerCount: Int!
+  $maximumPlayerCount: Int!
+  $minimumPlayerAge: Int!
+  $approximateGameTimeInMinutes: Int!
+  $category: Category!
+  $themes: [Theme!]!
+  $mechanisms: [Mechanism!]!
+) {
+  boardgame: saveBoardgame(inputBoardgame: {
+    id: $id
+    title: $title
+    authorId: $authorId
+    illustratorId: $illustratorId
+    publisherId: $publisherId
+    minimumPlayerCount: $minimumPlayerCount
+    maximumPlayerCount: $maximumPlayerCount
+    minimumPlayerAge: $minimumPlayerAge
+    approximateGameTimeInMinutes: $approximateGameTimeInMinutes
+    category: $category
+    themes: $themes
+    mechanisms: $mechanisms
+  }) {
+	id
+    title
+    authorId
+    illustratorId
+    publisherId
+    minimumPlayerCount
+    maximumPlayerCount
+    minimumPlayerAge
+    approximateGameTimeInMinutes
+    category
+    themes
+    mechanisms
+  }
+}

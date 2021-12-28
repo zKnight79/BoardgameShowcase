@@ -136,7 +136,7 @@ namespace BoardgameShowcase.Repository.InMemory.Test
         [InlineData(Theme.Europe, "e62ba15355724c54ba31639eee5755f3", "04431d8e91c74283bd397b0b4e03b8d4", "77bece67ea984b0fb84c6dec36b3704b")]
         [InlineData(Theme.Exploration, "e62ba15355724c54ba31639eee5755f3", "04431d8e91c74283bd397b0b4e03b8d4")]
         [InlineData(Theme.Medieval, "9310639a9862457d8b8f5b7c45d1774c")]
-        [InlineData(Theme.ScienceFiction, "3c0f4169d3b147958b3be1eb1aece90d", "dd137940ec5240d1a9233420e6647131")]
+        [InlineData(Theme.Science_Fiction, "3c0f4169d3b147958b3be1eb1aece90d", "dd137940ec5240d1a9233420e6647131")]
         [InlineData(Theme.Sciences, "3c0f4169d3b147958b3be1eb1aece90d")]
         [InlineData(Theme.Trains, "427d038416be4f5e84be0782264649a6")]
         [InlineData(Theme.USA, "427d038416be4f5e84be0782264649a6")]
@@ -158,7 +158,7 @@ namespace BoardgameShowcase.Repository.InMemory.Test
         [InlineData(Mechanism.Placement, "77bece67ea984b0fb84c6dec36b3704b")]
         [InlineData(Mechanism.Powers, "3c0f4169d3b147958b3be1eb1aece90d")]
         [InlineData(Mechanism.Ressources, "9310639a9862457d8b8f5b7c45d1774c")]
-        [InlineData(Mechanism.SecretObjectives, "427d038416be4f5e84be0782264649a6")]
+        [InlineData(Mechanism.Secret_Objectives, "427d038416be4f5e84be0782264649a6")]
         [InlineData(Mechanism.Tiles, "3c0f4169d3b147958b3be1eb1aece90d", "77bece67ea984b0fb84c6dec36b3704b")]
         [InlineData(Mechanism.Wargame, "e62ba15355724c54ba31639eee5755f3", "04431d8e91c74283bd397b0b4e03b8d4")]
         public async Task GetByMechanismTest(Mechanism mechanism, params string[] boardgameIds)
