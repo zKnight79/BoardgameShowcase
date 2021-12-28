@@ -154,4 +154,22 @@
   <data name="IllustratorUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>mutations\illustrator\illustratorupdate.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Publisher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\publisher\publisher.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PublisherCreate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>mutations\publisher\publishercreate.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PublisherDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>mutations\publisher\publisherdelete.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Publishers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\publisher\publishers.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PublishersByName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\publisher\publishersbyname.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PublisherUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>mutations\publisher\publisherupdate.graphql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

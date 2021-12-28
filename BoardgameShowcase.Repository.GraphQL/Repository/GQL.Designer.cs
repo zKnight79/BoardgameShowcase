@@ -165,7 +165,7 @@ namespace BoardgameShowcase.Repository.GraphQL.Repository {
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à mutation CreateIllustrator($name: String!) {
-        ///  illustrator: saveAuthor(inputIllustrator: {
+        ///  illustrator: saveIllustrator(inputIllustrator: {
         ///    name: $name
         ///  }) {
         ///	id
@@ -235,6 +235,95 @@ namespace BoardgameShowcase.Repository.GraphQL.Repository {
         internal static string IllustratorUpdate {
             get {
                 return ResourceManager.GetString("IllustratorUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query GetPublisherById($publisherId: String!) {
+        ///  publisher(id: $publisherId) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string Publisher {
+            get {
+                return ResourceManager.GetString("Publisher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation CreatePublisher($name: String!) {
+        ///  publisher: savePublisher(inputPublisher: {
+        ///    name: $name
+        ///  }) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string PublisherCreate {
+            get {
+                return ResourceManager.GetString("PublisherCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation DeletePublisher($publisherId: String!) {
+        ///  publisher: removePublisher(publisherId: $publisherId) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string PublisherDelete {
+            get {
+                return ResourceManager.GetString("PublisherDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query GetAllPublishers {
+        ///  publishers {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string Publishers {
+            get {
+                return ResourceManager.GetString("Publishers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à query PublishersLike($namePart: String!) {
+        ///  publishers: publishersByName(namePart: $namePart) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string PublishersByName {
+            get {
+                return ResourceManager.GetString("PublishersByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à mutation UpdatePublisher($id: String!, $name: String!) {
+        ///  publisher: savePublisher(inputPublisher: {
+        ///    id: $id
+        ///    name: $name
+        ///  }) {
+        ///	id
+        ///	name
+        ///  }
+        ///}.
+        /// </summary>
+        internal static string PublisherUpdate {
+            get {
+                return ResourceManager.GetString("PublisherUpdate", resourceCulture);
             }
         }
     }

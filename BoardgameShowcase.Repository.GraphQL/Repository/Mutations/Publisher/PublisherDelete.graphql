@@ -1,0 +1,6 @@
+﻿mutation DeletePublisher($publisherId: String!) {
+  publisher: removePublisher(publisherId: $publisherId) {
+	id
+	name
+  }
+}
