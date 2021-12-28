@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # Development settings
 /BoardgameShowcase.GraphQL.Server/appsettings.Development.json
+/BoardgameShowcase.Repository.GraphQL.Worker/appsettings.Development.json

@@ -1,0 +1,9 @@
+﻿mutation UpdateAuthor($id: String!, $name: String!) {
+  author: saveAuthor(inputAuthor: {
+    id: $id
+    name: $name
+  }) {
+	id
+	name
+  }
+}

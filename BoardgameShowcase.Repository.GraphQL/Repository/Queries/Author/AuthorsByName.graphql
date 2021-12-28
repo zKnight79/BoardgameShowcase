@@ -1,0 +1,6 @@
+﻿query AuthorsLike($namePart: String!) {
+  authors: authorsByName(namePart: $namePart) {
+	id
+	name
+  }
+}
