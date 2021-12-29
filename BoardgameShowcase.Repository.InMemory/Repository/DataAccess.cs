@@ -1,16 +1,19 @@
-﻿using BoardgameShowcase.Common.Utility;
+﻿using BoardgameShowcase.Common;
+using BoardgameShowcase.Common.Utility;
 using BoardgameShowcase.Model.Entity;
+using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.Repository.InMemory.Repository
 {
-    class DataAccess<T> : IDataAccess<T> where T : GenericEntity, new()
+    class DataAccess<T> : Loggable<DataAccess<T>>, IDataAccess<T> where T : GenericEntity, new()
     {
         private readonly List<T> _entities;
 
-        public DataAccess()
+        public DataAccess(ILogger<DataAccess<T>> logger)
+            : base(logger)
         {
             string filename = $"data/{typeof(T).Name.ToLower()}s.json";
-            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename);
+            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename, Logger);
         }
 
         private T CloneEntity(T entity)
