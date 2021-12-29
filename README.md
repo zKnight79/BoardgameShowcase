@@ -15,7 +15,7 @@ a versatile .Net ecosystem including :
 
 The solution contains the following projects :
 + [BoardgameShowcase.Common](BoardgameShowcase.Common/README.md), a library containing general purpose functions.
-+ BoardgameShowcase.Model, a library containing the application data model,
++ [BoardgameShowcase.Model](BoardgameShowcase.Model/README.md), a library containing the application data model,
   as well as the related service interfaces.
 + BoardgameShowcase.Repository, a repository implementation
   of the data model services, exposing repository interfaces.
