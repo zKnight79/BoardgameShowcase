@@ -24,7 +24,7 @@ The solution contains the following projects :
 + BoardgameShowcase.Repository.MongoDB, an implementation of the repositories,
   based on a MongoDB database.
   _coming soon ..._
-+ BoardgameShowcase.Repository.GraphQL, an implementation of the repositories,
++ [BoardgameShowcase.Repository.GraphQL](BoardgameShowcase.Repository.GraphQL/README.md), an implementation of the repositories,
   based on a GraphQL client.
 + BoardgameShowcase.GraphQL.Server, the GraphQL Server,
   that can use the InMemory or the MongoDB repository.
