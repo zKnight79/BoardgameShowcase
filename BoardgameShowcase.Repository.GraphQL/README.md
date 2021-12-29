@@ -3,7 +3,7 @@
 #### _A library containing an implementation of the repositories, using GraphQL client._
 
 This library contains an implementation of  of the repositories,
-using a GraphQL client for the [BoardgameShowcase.GraphQL.Server](BoardgameShowcase.GraphQL.Server/README.md).
+using a GraphQL client for the [BoardgameShowcase.GraphQL.Server](../BoardgameShowcase.GraphQL.Server/README.md).
 
 The endpoint of the GraphQL Server should be configured in
 the `appsettings.json` configuration file,
