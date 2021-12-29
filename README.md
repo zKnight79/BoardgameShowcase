@@ -17,7 +17,7 @@ The solution contains the following projects :
 + [BoardgameShowcase.Common](BoardgameShowcase.Common/README.md), a library containing general purpose functions.
 + [BoardgameShowcase.Model](BoardgameShowcase.Model/README.md), a library containing the application data model,
   as well as the related service interfaces.
-+ BoardgameShowcase.Repository, a repository implementation
++ [BoardgameShowcase.Repository](BoardgameShowcase.Repository/README.md), a repository implementation
   of the data model services, exposing repository interfaces.
 + BoardgameShowcase.Repository.InMemory, an implementation of the repositories,
   based on in memory data (for development and test purpose).
