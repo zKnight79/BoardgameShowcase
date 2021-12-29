@@ -1,6 +1,6 @@
 ﻿using BoardgameShowcase.Model.Entity;
 
-namespace BoardgameShowcase.Repository.GraphQL.Repository.Response
+namespace BoardgameShowcase.Repository.GraphQL.Response
 {
     class BoardgameResponse
     {

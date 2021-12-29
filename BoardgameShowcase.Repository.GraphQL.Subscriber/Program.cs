@@ -8,7 +8,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     )
     .ConfigureServices(services =>
     {
-        services.AddBoardgameShowcaseRepositoryGraphQL();
+        services.AddBoardgameShowcaseRepositoryGraphQLSubscriptionsOnly();
         services.AddHostedService<Worker>();
     })
     .Build();

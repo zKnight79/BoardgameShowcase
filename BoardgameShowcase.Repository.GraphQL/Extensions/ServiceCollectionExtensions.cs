@@ -8,19 +8,28 @@ namespace BoardgameShowcase.Repository.GraphQL.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddBoardgameShowcaseRepositoryGraphQL(this IServiceCollection services)
+        public static IServiceCollection AddBoardgameShowcaseRepositoryGraphQLSubscriptionsOnly(this IServiceCollection services)
         {
             services.AddSingleton<IDataAccess, DataAccess>();
-            services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IAuthorSubscription, AuthorSubscription>();
-            services.AddTransient<IIllustratorRepository, IllustratorRepository>();
             services.AddTransient<IIllustratorSubscription, IllustratorSubscription>();
-            services.AddTransient<IPublisherRepository, PublisherRepository>();
             services.AddTransient<IPublisherSubscription, PublisherSubscription>();
-            services.AddTransient<IBoardgameRepository, BoardgameRepository>();
             services.AddTransient<IBoardgameSubscription, BoardgameSubscription>();
 
+            return services;
+        }
+
+
+        public static IServiceCollection AddBoardgameShowcaseRepositoryGraphQL(this IServiceCollection services)
+        {
             services.AddBoardgameShowcaseRepository();
+
+            services.AddBoardgameShowcaseRepositoryGraphQLSubscriptionsOnly();
+
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IIllustratorRepository, IllustratorRepository>();
+            services.AddTransient<IPublisherRepository, PublisherRepository>();
+            services.AddTransient<IBoardgameRepository, BoardgameRepository>();
 
             return services;
         }

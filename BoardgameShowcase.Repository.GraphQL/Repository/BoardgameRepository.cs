@@ -2,7 +2,7 @@
 using BoardgameShowcase.Common.Extensions;
 using BoardgameShowcase.Model.Entity;
 using BoardgameShowcase.Model.Entity.Enumeration;
-using BoardgameShowcase.Repository.GraphQL.Repository.Response;
+using BoardgameShowcase.Repository.GraphQL.Response;
 using BoardgameShowcase.Repository.Repository;
 using Microsoft.Extensions.Logging;
 

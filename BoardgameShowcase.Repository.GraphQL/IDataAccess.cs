@@ -1,4 +1,4 @@
-﻿namespace BoardgameShowcase.Repository.GraphQL.Repository
+﻿namespace BoardgameShowcase.Repository.GraphQL
 {
     public interface IDataAccess
     {

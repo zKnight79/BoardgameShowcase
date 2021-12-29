@@ -7,7 +7,7 @@ using GraphQL.Client.Serializer.SystemTextJson;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace BoardgameShowcase.Repository.GraphQL.Repository
+namespace BoardgameShowcase.Repository.GraphQL
 {
     class DataAccess : Loggable<DataAccess>, IDataAccess
     {
