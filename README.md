@@ -19,7 +19,7 @@ The solution contains the following projects :
   as well as the related service interfaces.
 + [BoardgameShowcase.Repository](BoardgameShowcase.Repository/README.md), a repository implementation
   of the data model services, exposing repository interfaces.
-+ BoardgameShowcase.Repository.InMemory, an implementation of the repositories,
++ [BoardgameShowcase.Repository.InMemory](BoardgameShowcase.Repository.InMemory/README.md), an implementation of the repositories,
   based on in memory data (for development and test purpose).
 + BoardgameShowcase.Repository.MongoDB, an implementation of the repositories,
   based on a MongoDB database.
