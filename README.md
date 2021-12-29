@@ -14,7 +14,7 @@ a versatile .Net ecosystem including :
   or on access via the GraphQL client.
 
 The solution contains the following projects :
-+ BoardgameShowcase.Common, a library containing general purpose functions.
++ [BoardgameShowcase.Common](BoardgameShowcase.Common/README.md), a library containing general purpose functions.
 + BoardgameShowcase.Model, a library containing the application data model,
   as well as the related service interfaces.
 + BoardgameShowcase.Repository, a repository implementation
