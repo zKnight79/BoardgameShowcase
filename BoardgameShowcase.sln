@@ -19,7 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repositor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repository.GraphQL.Worker", "BoardgameShowcase.Repository.GraphQL.Worker\BoardgameShowcase.Repository.GraphQL.Worker.csproj", "{E2F50BFA-20A5-40EB-A118-7250D08AB509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Repository.GraphQL.Subscriber", "BoardgameShowcase.Repository.GraphQL.Subscriber\BoardgameShowcase.Repository.GraphQL.Subscriber.csproj", "{10C31551-DFE6-415F-ABC6-AEE33F469474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repository.GraphQL.Subscriber", "BoardgameShowcase.Repository.GraphQL.Subscriber\BoardgameShowcase.Repository.GraphQL.Subscriber.csproj", "{10C31551-DFE6-415F-ABC6-AEE33F469474}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1301FFA-9FDB-4545-9C89-BD3068F4BF85}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
