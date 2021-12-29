@@ -22,3 +22,13 @@ by calling the extension method :
 ```csharp
 services.AddBoardgameShowcaseRepositoryGraphQL()
 ```
+
+This library also add client part for subscriptions.
+
+To use only subscriptions in another project,
+using dependency injection,
+call the extension method :
+
+```csharp
+services.AddBoardgameShowcaseRepositoryGraphQLSubscriptionsOnly()
+```
