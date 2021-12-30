@@ -2,7 +2,7 @@
 
 namespace BoardgameShowcase.Repository.InMemory.Repository
 {
-    public interface IDataAccess<T> where T : GenericEntity
+    interface IDataAccess<T> where T : GenericEntity
     {
         IEnumerable<T> QueryEntities(Func<T, bool> predicate);
         T? QueryEntity(Func<T, bool> predicate);
