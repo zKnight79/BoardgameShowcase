@@ -6,8 +6,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BoardgameShowcase.Repository.GraphQL.Extensions
 {
+    /// <summary>
+    /// Provides extension methods for <see cref="IServiceCollection"/>.
+    /// </summary>
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Add Boardgame Showcase GraphQL Repository subscriptions to the dependency injection.
+        /// </summary>
+        /// <param name="services">The service collection in which to add the subscriptions.</param>
+        /// <returns>The provided service collection.</returns>
         public static IServiceCollection AddBoardgameShowcaseRepositoryGraphQLSubscriptionsOnly(this IServiceCollection services)
         {
             services.AddSingleton<IDataAccess, DataAccess>();
@@ -19,7 +27,11 @@ namespace BoardgameShowcase.Repository.GraphQL.Extensions
             return services;
         }
 
-
+        /// <summary>
+        /// Add Boardgame Showcase GraphQL Repository repositories and subscriptions to the dependency injection.
+        /// </summary>
+        /// <param name="services">The service collection in which to add the repositories and subscriptions.</param>
+        /// <returns>The provided service collection.</returns>
         public static IServiceCollection AddBoardgameShowcaseRepositoryGraphQL(this IServiceCollection services)
         {
             services.AddBoardgameShowcaseRepository();
