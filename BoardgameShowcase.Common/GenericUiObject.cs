@@ -18,8 +18,7 @@ namespace BoardgameShowcase.Common
         /// <inheritdoc/>
         /// </summary>
         /// <returns>
-        /// <inheritdoc/><br/>
-        /// The hash code of the <seealso cref="UiId"/>
+        /// The hash code of the <seealso cref="UiId"/>.
         /// </returns>
         public override int GetHashCode()
         {
