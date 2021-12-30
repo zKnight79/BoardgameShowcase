@@ -26,7 +26,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
             this.CallPrivateUnheritedParameterlessMethodsReturning(typeof(void));
         }
 
-        private T GetEntityFromContext<T>(IResolveFieldContext context) where T : GenericEntity
+        private static T GetEntityFromContext<T>(IResolveFieldContext context) where T : GenericEntity
         {
             if (context.Source is T entity)
             {

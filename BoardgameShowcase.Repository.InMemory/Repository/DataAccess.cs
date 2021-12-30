@@ -13,10 +13,10 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
             : base(logger)
         {
             string filename = $"data/{typeof(T).Name.ToLower()}s.json";
-            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename, Logger);
+            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename, Logger) ?? new();
         }
 
-        private T CloneEntity(T entity)
+        private static T CloneEntity(T entity)
         {
             if (entity.Clone() is T clone)
             {
@@ -28,12 +28,12 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
             }
         }
 
-        private IEnumerable<T> CloneEntities(IEnumerable<T> entities)
+        private static IEnumerable<T> CloneEntities(IEnumerable<T> entities)
         {
             List<T> clonedEntities = new();
             foreach (T entity in entities)
             {
-                clonedEntities.Add(CloneEntity(entity));
+                clonedEntities.Add(DataAccess<T>.CloneEntity(entity));
             }
             return clonedEntities;
         }
@@ -41,7 +41,7 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
         public IEnumerable<T> QueryEntities(Func<T, bool> predicate)
         {
             IEnumerable<T> entities = _entities.Where(predicate);
-            return CloneEntities(entities);
+            return DataAccess<T>.CloneEntities(entities);
         }
 
         public T? QueryEntity(Func<T, bool> predicate)
@@ -49,7 +49,7 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
             T? entity = _entities.SingleOrDefault(predicate);
             if (entity is not null)
             {
-                entity = CloneEntity(entity);
+                entity = DataAccess<T>.CloneEntity(entity);
             }
             return entity;
         }
@@ -59,7 +59,7 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
             T? newEntity = null;
             if (entity.IsNew)
             {
-                newEntity = CloneEntity(entity);
+                newEntity = DataAccess<T>.CloneEntity(entity);
                 newEntity.Id = StringUtil.NewGuid();
                 _entities.Add(newEntity);
             }
@@ -75,7 +75,7 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
                 int index = _entities.IndexOf(entity);
                 if (index >= 0)
                 {
-                    _entities[index] = CloneEntity(entity);
+                    _entities[index] = DataAccess<T>.CloneEntity(entity);
                     updated = true;
                 }
             }

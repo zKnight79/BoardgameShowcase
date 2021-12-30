@@ -1,6 +1,6 @@
 namespace BoardgameShowcase.Repository.GraphQL.Worker
 {
-    public class Worker : BackgroundService
+    class Worker : BackgroundService
     {
         private readonly IHostApplicationLifetime _hostApplicationLifetime;
         private readonly IEnumerable<IJob> _jobs;

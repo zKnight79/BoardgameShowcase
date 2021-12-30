@@ -2,7 +2,7 @@ using BoardgameShowcase.Repository.GraphQL.Subscription;
 
 namespace BoardgameShowcase.Repository.GraphQL.Subscriber
 {
-    public class Worker : BackgroundService
+    class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
         private readonly IAuthorSubscription _authorSubscription;
@@ -10,7 +10,7 @@ namespace BoardgameShowcase.Repository.GraphQL.Subscriber
         private readonly IPublisherSubscription _publisherSubscription;
         private readonly IBoardgameSubscription _boardgameSubscription;
 
-        private List<IDisposable> _subscriptions = new();
+        private readonly List<IDisposable> _subscriptions = new();
 
         public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider)
         {

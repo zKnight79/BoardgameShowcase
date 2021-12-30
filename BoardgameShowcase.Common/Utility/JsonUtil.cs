@@ -4,9 +4,19 @@ using Microsoft.Extensions.Logging;
 
 namespace BoardgameShowcase.Common.Utility
 {
+    /// <summary>
+    /// Provides utility methods for Json.
+    /// </summary>
     public static class JsonUtil
     {
-        public static T DeserialiseWithStringEnum<T>(string filename, ILogger? logger = null) where T : new()
+        /// <summary>
+        /// Deserialize a json file where enums are stored as string.
+        /// </summary>
+        /// <typeparam name="T">The type of the resulting object instance.</typeparam>
+        /// <param name="filename">The name (path included) of the json file to deserialize.</param>
+        /// <param name="logger">An optional <see cref="ILogger"/> used to write message logs.</param>
+        /// <returns>The result of the Json deserialization, or <see cref="null"/> if something went wrong.</returns>
+        public static T? DeserialiseWithStringEnum<T>(string filename, ILogger? logger = null)
         {
             T? result = default;
 
@@ -34,7 +44,7 @@ namespace BoardgameShowcase.Common.Utility
                 logger?.LogError(ex, $"An error occured during deserialization of `{filename}`");
             }
 
-            return result ?? new();
+            return result;
         }
     }
 }

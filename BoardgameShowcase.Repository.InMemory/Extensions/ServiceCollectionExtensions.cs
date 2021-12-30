@@ -7,6 +7,11 @@ namespace BoardgameShowcase.Repository.InMemory.Extensions
 {
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Add Boardgame Showcase InMemory Repository repositories to the dependency injection.
+        /// </summary>
+        /// <param name="services">The service collection in which to add the repositories.</param>
+        /// <returns>The provided service collection.</returns>
         public static IServiceCollection AddBoardgameShowcaseRepositoryInMemory(this IServiceCollection services)
         {
             services.AddSingleton(typeof(IDataAccess<>), typeof(DataAccess<>));
