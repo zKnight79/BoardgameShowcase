@@ -13,7 +13,7 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
             : base(logger)
         {
             string filename = $"data/{typeof(T).Name.ToLower()}s.json";
-            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename, Logger);
+            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename, Logger) ?? new();
         }
 
         private T CloneEntity(T entity)
