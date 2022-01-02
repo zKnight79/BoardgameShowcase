@@ -1,0 +1,14 @@
+{
+  "name": "tailwind.for.portal",
+  "version": "1.0.0",
+  "description": "Tailwind CSS integration for Boardgame Showcase Portal",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.css",
+    "build-dev-watch": "npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.css --watch",
+    "build-prod": "npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.min.css --minify",
+    "build-prod-watch": "npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.min.css --minify --watch"
+  },
+  "author": "Guillaume JIBAUT",
+  "license": "ISC"
+}
