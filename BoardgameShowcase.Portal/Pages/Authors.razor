@@ -1,0 +1,33 @@
+﻿@attribute [Route(ROUTE)]
+
+@using BoardgameShowcase.Model.Entity
+
+<h3>Authors</h3>
+
+<div>
+<table class="table-fixed w-full bg-slate-50 border border-slate-300 shadow-lg">
+    <thead class="bg-slate-600 text-slate-100">
+        <tr class="divide-x divide-slate-300">
+            <th class="p-1">
+                Author ID
+            </th>
+            <th class="p-1">
+                Name
+            </th>
+        </tr>
+    </thead>
+    <tbody class="text-slate-700 divide-y divide-slate-300">
+        @foreach (Author author in AuthorList)
+        {
+            <tr @key="author.UiId" class="odd:bg-slate-200 hover:bg-slate-800 hover:text-slate-100 divide-x divide-slate-300">
+                <td class="p-1">
+                    @author.Id
+                </td>
+                <td class="p-1">
+                    @author.Name
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

@@ -1,3 +1,4 @@
+using BoardgameShowcase.Repository.InMemory.Extensions;
 using Serilog;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -7,8 +8,9 @@ builder.Host.UseSerilog(
 );
 
 IServiceCollection services = builder.Services;
-builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
+services.AddRazorPages();
+services.AddServerSideBlazor();
+services.AddBoardgameShowcaseRepositoryInMemory();
 
 WebApplication app = builder.Build();
 

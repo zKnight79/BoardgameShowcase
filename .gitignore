@@ -362,6 +362,9 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+# .VSCODE directory
+.vscode
+
 # Development settings
 /BoardgameShowcase.GraphQL.Server/appsettings.Development.json
 /BoardgameShowcase.Repository.GraphQL.Worker/appsettings.Development.json
