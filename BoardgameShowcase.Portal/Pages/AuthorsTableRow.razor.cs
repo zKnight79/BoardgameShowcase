@@ -2,12 +2,12 @@
 using BoardgameShowcase.Model.Service;
 using Microsoft.AspNetCore.Components;
 
-namespace BoardgameShowcase.Portal.Shared.AuthorComponents
+namespace BoardgameShowcase.Portal.Pages
 {
-    public partial class AuthorTableRow
+    public partial class AuthorsTableRow
     {
         private const int MAX_BOARDGAME_COUNT = 3;
-        
+
         [Inject] private IBoardgameService BoardgameService { get; set; } = default!;
 
         [Parameter, EditorRequired] public Author Author { get; set; } = default!;
