@@ -365,6 +365,9 @@ FodyWeavers.xsd
 # .VSCODE directory
 .vscode
 
+# Compiled CSS
+/BoardgameShowcase.Portal/wwwroot/css/tailwind*.css
+
 # Development settings
 /BoardgameShowcase.GraphQL.Server/appsettings.Development.json
 /BoardgameShowcase.Repository.GraphQL.Worker/appsettings.Development.json
