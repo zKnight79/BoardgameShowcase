@@ -4,8 +4,8 @@
 
 <h3>Authors</h3>
 
-<div class="max-w-full overflow-x-auto">
-    <table class="table-auto w-full bg-slate-50 border border-slate-300 shadow-lg">
+<div class="overflow-x-auto shadow-lg">
+    <table class="table-auto w-full border border-slate-300">
         <thead class="bg-slate-600 text-slate-100">
             <tr class="divide-x divide-slate-300">
                 <th class="p-1">
@@ -14,19 +14,15 @@
                 <th class="p-1">
                     Name
                 </th>
+                <th class="p-1">
+                    Boardgames
+                </th>
             </tr>
         </thead>
-        <tbody class="text-slate-700 divide-y divide-slate-300">
+        <tbody class="bg-slate-50 text-slate-700 divide-y divide-slate-300">
             @foreach (Author author in AuthorList)
             {
-                <tr @key="author.UiId" class="odd:bg-slate-200 hover:bg-slate-800 hover:text-slate-100 divide-x divide-slate-300">
-                    <td class="p-1 whitespace-nowrap">
-                        @author.Id
-                    </td>
-                    <td class="p-1 whitespace-nowrap">
-                        @author.Name
-                    </td>
-                </tr>
+                <AuthorTableRow @key="author.UiId" Author="author" />
             }
         </tbody>
     </table>
