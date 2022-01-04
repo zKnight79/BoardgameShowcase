@@ -8,5 +8,9 @@
         {
             CollapseNavMenu = !CollapseNavMenu;
         }
+        private void HideNavMenu()
+        {
+            CollapseNavMenu = true;
+        }
     }
 }

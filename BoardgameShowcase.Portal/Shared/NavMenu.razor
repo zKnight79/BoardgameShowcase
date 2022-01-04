@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div class="text-white @(CollapseNavMenu ? "hidden" : "") md:block" @onclick="ToggleNavMenu">
+<div class="text-white @(CollapseNavMenu ? "hidden" : "") md:block" @onclick="HideNavMenu">
     <nav class="space-y-3 py-3">
         <NavMenuItem HRef="" Label="Home" FAIconClass="fas fa-home" LinkMatch="NavLinkMatch.All" />
         <NavMenuItem HRef="boardgames" Label="Boardgames" FAIconClass="fas fa-dice" />
