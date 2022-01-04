@@ -38,5 +38,10 @@
   <ItemGroup>
     <ProjectReference Include="..\BoardgameShowcase.Repository.InMemory\BoardgameShowcase.Repository.InMemory.csproj" />
   </ItemGroup>
+  
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec WorkingDirectory="../Tailwind.For.Portal" Command="npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.css" />
+    <Exec WorkingDirectory="../Tailwind.For.Portal" Command="npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.min.css --minify" />
+  </Target>
 
 </Project>
