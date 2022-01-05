@@ -1,6 +1,6 @@
 ﻿using BoardgameShowcase.Model.Entity;
 
-namespace BoardgameShowcase.Repository.GraphQL.Subscription
+namespace BoardgameShowcase.Model.Subscription
 {
     /// <summary>
     /// The interface for boardgame subscriptions.

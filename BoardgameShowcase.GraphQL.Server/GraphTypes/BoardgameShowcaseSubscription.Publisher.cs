@@ -14,7 +14,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an publisher is added",
                 Type = typeof(NonNullGraphType<PublisherType>),
                 Resolver = new FuncFieldResolver<Publisher>(GetEntityFromContext<Publisher>),
-                Subscriber = new EventStreamResolver<Publisher>(context => _publisherService.EntityAdded)
+                Subscriber = new EventStreamResolver<Publisher>(context => _publisherService.Added)
             });
         }
 
@@ -26,7 +26,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an publisher is modified",
                 Type = typeof(NonNullGraphType<PublisherType>),
                 Resolver = new FuncFieldResolver<Publisher>(GetEntityFromContext<Publisher>),
-                Subscriber = new EventStreamResolver<Publisher>(context => _publisherService.EntityModified)
+                Subscriber = new EventStreamResolver<Publisher>(context => _publisherService.Modified)
             });
         }
 
@@ -38,7 +38,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an publisher is removed",
                 Type = typeof(NonNullGraphType<PublisherType>),
                 Resolver = new FuncFieldResolver<Publisher>(GetEntityFromContext<Publisher>),
-                Subscriber = new EventStreamResolver<Publisher>(context => _publisherService.EntityRemoved)
+                Subscriber = new EventStreamResolver<Publisher>(context => _publisherService.Removed)
             });
         }
     }

@@ -1,4 +1,4 @@
-using BoardgameShowcase.Repository.GraphQL.Subscription;
+using BoardgameShowcase.Model.Subscription;
 
 namespace BoardgameShowcase.Repository.GraphQL.Subscriber
 {

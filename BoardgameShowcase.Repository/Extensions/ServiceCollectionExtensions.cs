@@ -1,5 +1,7 @@
 ﻿using BoardgameShowcase.Model.Service;
+using BoardgameShowcase.Model.Subscription;
 using BoardgameShowcase.Repository.Service;
+using BoardgameShowcase.Repository.Subscription;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BoardgameShowcase.Repository.Extensions
@@ -17,9 +19,13 @@ namespace BoardgameShowcase.Repository.Extensions
         public static IServiceCollection AddBoardgameShowcaseRepository(this IServiceCollection services)
         {
             services.AddSingleton<IAuthorService, AuthorService>();
+            services.AddTransient<IAuthorSubscription, AuthorSubscription>();
             services.AddSingleton<IIllustratorService, IllustratorService>();
+            services.AddTransient<IIllustratorSubscription, IllustratorSubscription>();
             services.AddSingleton<IPublisherService, PublisherService>();
+            services.AddTransient<IPublisherSubscription, PublisherSubscription>();
             services.AddSingleton<IBoardgameService, BoardgameService>();
+            services.AddTransient<IBoardgameSubscription, BoardgameSubscription>();
 
             return services;
         }

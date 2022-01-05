@@ -14,7 +14,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an illustrator is added",
                 Type = typeof(NonNullGraphType<IllustratorType>),
                 Resolver = new FuncFieldResolver<Illustrator>(GetEntityFromContext<Illustrator>),
-                Subscriber = new EventStreamResolver<Illustrator>(context => _illustratorService.EntityAdded)
+                Subscriber = new EventStreamResolver<Illustrator>(context => _illustratorService.Added)
             });
         }
 
@@ -26,7 +26,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an illustrator is modified",
                 Type = typeof(NonNullGraphType<IllustratorType>),
                 Resolver = new FuncFieldResolver<Illustrator>(GetEntityFromContext<Illustrator>),
-                Subscriber = new EventStreamResolver<Illustrator>(context => _illustratorService.EntityModified)
+                Subscriber = new EventStreamResolver<Illustrator>(context => _illustratorService.Modified)
             });
         }
 
@@ -38,7 +38,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an illustrator is removed",
                 Type = typeof(NonNullGraphType<IllustratorType>),
                 Resolver = new FuncFieldResolver<Illustrator>(GetEntityFromContext<Illustrator>),
-                Subscriber = new EventStreamResolver<Illustrator>(context => _illustratorService.EntityRemoved)
+                Subscriber = new EventStreamResolver<Illustrator>(context => _illustratorService.Removed)
             });
         }
     }
