@@ -52,14 +52,14 @@ namespace BoardgameShowcase.Model.Service
         /// <summary>
         /// Get an <see cref="IObservable{T}"/> that notifies when an entity is added.
         /// </summary>
-        IObservable<T> EntityAdded { get; }
+        IObservable<T> Added { get; }
         /// <summary>
         /// Get an <see cref="IObservable{T}"/> that notifies when an entity is modified.
         /// </summary>
-        IObservable<T> EntityModified { get; }
+        IObservable<T> Modified { get; }
         /// <summary>
         /// Get an <see cref="IObservable{T}"/> that notifies when an entity is removed.
         /// </summary>
-        IObservable<T> EntityRemoved { get; }
+        IObservable<T> Removed { get; }
     }
 }
