@@ -37,3 +37,5 @@ The solution contains the following projects :
   that ensures the proper functioning of the GraphQL repository.
 + [BoardgameShowcase.Repository.GraphQL.Subscriber](BoardgameShowcase.Repository.GraphQL.Subscriber/README.md), a console project
   that ensures the proper functioning of the GraphQL client for subscriptions.
++ [BoardgameShowcase.Repository.InMemory.Worker](BoardgameShowcase.Repository.InMemory.Worker/README.md), a console project
+  that ensures the proper functioning of the InMemory repository.

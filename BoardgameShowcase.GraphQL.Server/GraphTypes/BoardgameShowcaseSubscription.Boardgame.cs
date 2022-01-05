@@ -14,7 +14,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an boardgame is added",
                 Type = typeof(NonNullGraphType<BoardgameType>),
                 Resolver = new FuncFieldResolver<Boardgame>(GetEntityFromContext<Boardgame>),
-                Subscriber = new EventStreamResolver<Boardgame>(context => _boardgameService.EntityAdded)
+                Subscriber = new EventStreamResolver<Boardgame>(context => _boardgameService.Added)
             });
         }
 
@@ -26,7 +26,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an boardgame is modified",
                 Type = typeof(NonNullGraphType<BoardgameType>),
                 Resolver = new FuncFieldResolver<Boardgame>(GetEntityFromContext<Boardgame>),
-                Subscriber = new EventStreamResolver<Boardgame>(context => _boardgameService.EntityModified)
+                Subscriber = new EventStreamResolver<Boardgame>(context => _boardgameService.Modified)
             });
         }
 
@@ -38,7 +38,7 @@ namespace BoardgameShowcase.GraphQL.Server.GraphTypes
                 Description = "Fire an event when an boardgame is removed",
                 Type = typeof(NonNullGraphType<BoardgameType>),
                 Resolver = new FuncFieldResolver<Boardgame>(GetEntityFromContext<Boardgame>),
-                Subscriber = new EventStreamResolver<Boardgame>(context => _boardgameService.EntityRemoved)
+                Subscriber = new EventStreamResolver<Boardgame>(context => _boardgameService.Removed)
             });
         }
     }

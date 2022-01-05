@@ -369,7 +369,4 @@ FodyWeavers.xsd
 /BoardgameShowcase.Portal/wwwroot/css/tailwind*.css
 
 # Development settings
-/BoardgameShowcase.GraphQL.Server/appsettings.Development.json
-/BoardgameShowcase.Repository.GraphQL.Worker/appsettings.Development.json
-/BoardgameShowcase.Repository.GraphQL.Subscriber/appsettings.Development.json
-/BoardgameShowcase.Portal/appsettings.Development.json
+appsettings.Development.json

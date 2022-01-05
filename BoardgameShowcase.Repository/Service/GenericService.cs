@@ -105,10 +105,10 @@ namespace BoardgameShowcase.Repository.Service
             return removedEntity;
         }
 
-        public IObservable<T> EntityAdded => _entityAddedStream;
+        public IObservable<T> Added => _entityAddedStream;
 
-        public IObservable<T> EntityModified => _entityModifiedStream;
+        public IObservable<T> Modified => _entityModifiedStream;
 
-        public IObservable<T> EntityRemoved => _entityRemovedStream;
+        public IObservable<T> Removed => _entityRemovedStream;
     }
 }

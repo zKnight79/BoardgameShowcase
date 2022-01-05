@@ -1,4 +1,5 @@
 ﻿using BoardgameShowcase.Model.Entity;
+using BoardgameShowcase.Model.Subscription;
 using BoardgameShowcase.Repository.GraphQL.Response;
 using Microsoft.Extensions.Logging;
 
