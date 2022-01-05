@@ -362,5 +362,11 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+# .VSCODE directory
+.vscode
+
+# Compiled CSS
+/BoardgameShowcase.Portal/wwwroot/css/tailwind*.css
+
 # Development settings
 appsettings.Development.json

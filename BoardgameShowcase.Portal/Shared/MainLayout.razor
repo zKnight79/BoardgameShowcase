@@ -1,0 +1,14 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>Boardgame Showcase</PageTitle>
+
+<div class="flex flex-col md:flex-row">
+    <NavMenu />
+
+    @* min-width: 0 => hack for the flex item to overflow the viewport *@
+    <main class="flex-1 min-w-0">
+        <article class="p-4">
+            @Body
+        </article>
+    </main>
+</div>
