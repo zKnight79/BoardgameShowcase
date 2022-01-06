@@ -28,7 +28,7 @@ The solution contains the following projects :
   based on a GraphQL client.
 + [BoardgameShowcase.GraphQL.Server](BoardgameShowcase.GraphQL.Server/README.md), the GraphQL Server,
   that can use the InMemory or the MongoDB repository.
-+ BoardgameShowcase.Portal, a Blazor Server web portal,
++ [BoardgameShowcase.Portal](BoardgameShowcase.Portal/README.md), a Blazor Server web portal,
   that can use the InMemory, the MongoDB or the GraphQL repository.
   _coming soon ..._
 + [BoardgameShowcase.Repository.InMemory.Test](BoardgameShowcase.Repository.InMemory.Test/README.md), a unit test project

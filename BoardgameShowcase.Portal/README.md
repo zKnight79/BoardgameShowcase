@@ -9,5 +9,7 @@ powered by ASP.NET Core / Blazor.
 The project uses [Tailwind CSS](https://tailwindcss.com/) for general styling,
 and [Font Awesome](https://fontawesome.com/) for the icons.
 
-In order to build the CSS,
-see [Tailwind.For.Portal](../Tailwind.For.Portal/README.md)
+In order to build the Tailwind CSS,
+standalone Tailwind CSS standalone CLI should be available on the build machine.
+
+Tailwind CSS build is setup as a pre-build event.
