@@ -17,7 +17,7 @@
     <div class="text-white @(CollapseNavMenu ? "hidden" : "") md:block" @onclick="HideNavMenu">
         <nav class="space-y-3 py-3">
             <NavMenuItem HRef="" Label="Home" FAIconClass="fas fa-home" LinkMatch="NavLinkMatch.All" />
-            <NavMenuItem HRef="boardgames" Label="Boardgames" FAIconClass="fas fa-dice" />
+            <NavMenuItem HRef="@Boardgames.ROUTE" Label="Boardgames" FAIconClass="fas fa-dice" />
             <NavMenuItem HRef="@Authors.ROUTE" Label="Authors" FAIconClass="fas fa-user" />
             <NavMenuItem HRef="@Illustrators.ROUTE" Label="Illustrators" FAIconClass="far fa-images" />
             <NavMenuItem HRef="@Publishers.ROUTE" Label="Publishers" FAIconClass="fas fa-store-alt" />
