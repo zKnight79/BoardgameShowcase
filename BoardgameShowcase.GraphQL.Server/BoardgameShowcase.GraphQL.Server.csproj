@@ -7,28 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="data\authors.json" />
-    <Content Remove="data\boardgames.json" />
-    <Content Remove="data\illustrators.json" />
-    <Content Remove="data\publishers.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="data\authors.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\boardgames.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\illustrators.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\publishers.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="GraphQL.Server.Transports.AspNetCore.SystemTextJson" Version="5.1.1" />
     <PackageReference Include="GraphQL.Server.Transports.Subscriptions.WebSockets" Version="5.1.1" />
     <PackageReference Include="GraphQL.Server.Ui.Altair" Version="5.1.1" />

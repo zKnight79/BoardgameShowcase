@@ -26,19 +26,4 @@
     <ProjectReference Include="..\BoardgameShowcase.Repository.InMemory\BoardgameShowcase.Repository.InMemory.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="data\authors.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="data\boardgames.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="data\illustrators.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="data\publishers.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
