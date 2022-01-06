@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repositor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repository.GraphQL.Subscriber", "BoardgameShowcase.Repository.GraphQL.Subscriber\BoardgameShowcase.Repository.GraphQL.Subscriber.csproj", "{10C31551-DFE6-415F-ABC6-AEE33F469474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardgameShowcase.Repository.InMemory.Worker", "BoardgameShowcase.Repository.InMemory.Worker\BoardgameShowcase.Repository.InMemory.Worker.csproj", "{2CF34A90-38B9-4415-9625-73FDFD5A7E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Repository.InMemory.Worker", "BoardgameShowcase.Repository.InMemory.Worker\BoardgameShowcase.Repository.InMemory.Worker.csproj", "{2CF34A90-38B9-4415-9625-73FDFD5A7E55}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardgameShowcase.Portal", "BoardgameShowcase.Portal\BoardgameShowcase.Portal.csproj", "{CF7CAF44-CBA8-4C54-9EEC-82142C1A5BBF}"
 EndProject
