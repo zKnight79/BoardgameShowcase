@@ -2,6 +2,7 @@
 using BoardgameShowcase.Common.Utility;
 using BoardgameShowcase.Model.Entity;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace BoardgameShowcase.Repository.InMemory.Repository
 {
@@ -12,8 +13,22 @@ namespace BoardgameShowcase.Repository.InMemory.Repository
         public DataAccess(ILogger<DataAccess<T>> logger)
             : base(logger)
         {
-            string filename = $"data/{typeof(T).Name.ToLower()}s.json";
-            _entities = JsonUtil.DeserialiseWithStringEnum<List<T>>(filename, Logger) ?? new();
+            string typeName = typeof(T).Name;
+
+            List<T>? entities = null;
+            try
+            {
+                Assembly assembly = GetType().Assembly;
+                string resName = $"{assembly.GetName().Name}.data.{typeName.ToLower()}s.json";
+                using Stream? stream = assembly.GetManifestResourceStream(resName);
+                entities = JsonUtil.DeserializeWithStringEnum<List<T>>(stream, Logger);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, $"An error occured loading InMemory data for `{typeName}`");
+            }
+
+            _entities = entities ?? new();
         }
 
         private static T CloneEntity(T entity)

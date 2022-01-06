@@ -7,6 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\authors.json" />
+    <None Remove="data\boardgames.json" />
+    <None Remove="data\illustrators.json" />
+    <None Remove="data\publishers.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="data\authors.json" />
+    <EmbeddedResource Include="data\boardgames.json" />
+    <EmbeddedResource Include="data\illustrators.json" />
+    <EmbeddedResource Include="data\publishers.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BoardgameShowcase.Repository\BoardgameShowcase.Repository.csproj" />
   </ItemGroup>
 
