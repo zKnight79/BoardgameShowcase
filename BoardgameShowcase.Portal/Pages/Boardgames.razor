@@ -5,27 +5,27 @@
 <h3>Boardgames</h3>
 
 <div class="overflow-x-auto shadow-lg">
-    <table class="table-auto w-full border border-slate-300">
-        <thead class="bg-slate-600 text-slate-100">
-            <tr class="divide-x divide-slate-300">
-                <th class="p-1">
+    <table class="table-auto w-full">
+        <thead>
+            <tr>
+                <th>
                     Boardgame ID
                 </th>
-                <th class="p-1">
+                <th>
                     Title
                 </th>
-                <th class="p-1">
+                <th>
                     Author
                 </th>
-                <th class="p-1">
+                <th>
                     Illustrator
                 </th>
-                <th class="p-1">
+                <th>
                     Publisher
                 </th>
             </tr>
         </thead>
-        <tbody class="bg-slate-50 text-slate-700 divide-y divide-slate-300">
+        <tbody>
             @foreach (Boardgame boardgame in BoardgameList)
             {
                 <BoardgamesTableRow @key="boardgame.UiId" Boardgame="boardgame" />

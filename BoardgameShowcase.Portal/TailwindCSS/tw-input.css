@@ -1,16 +1,90 @@
 @tailwind base;
 
 @layer base {
+    /* HEADINGS */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold mb-2 focus-visible:outline-none;
+    }
+
     h1 {
-        @apply text-4xl font-semibold mb-2 outline-none;
+        @apply text-5xl;
     }
+
     h2 {
-        @apply text-3xl font-semibold mb-2;
+        @apply text-4xl;
     }
+
     h3 {
-        @apply text-2xl font-semibold mb-2;
+        @apply text-3xl;
+    }
+
+    h4 {
+        @apply text-2xl;
+    }
+
+    h5 {
+        @apply text-xl;
+    }
+
+    h6 {
+        @apply text-lg;
+    }
+
+    /* TABLE */
+    thead {
+        @apply font-bold bg-primary text-on-primary;
+    }
+
+    tbody tr {
+        @apply bg-primary/10 even:bg-primary/20 hover:bg-primary/40;
+    }
+
+    th, td {
+        @apply p-1 text-left border border-primary/25;
+    }
+
+    th {
+        @apply align-bottom;
+    }
+
+    td {
+        @apply align-middle;
+    }
+
+    /* LINK */
+    a {
+        @apply text-primary hover:text-secondary font-semibold underline;
     }
 }
 
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bgsc-background: 252 252 252;
+    --bgsc-on-background: 3 3 3;
+    --bgsc-primary: 0 84 123;
+    --bgsc-on-primary: 232 232 232;
+    --bgsc-secondary: 143 52 147;
+    --bgsc-on-secondary: 245 245 245;
+    --bgsc-menu-top: 49 46 129;
+    --bgsc-menu-bottom: 112 26 117;
+    --bgsc-menu-text: var(--bgsc-background);
+}
+
+.theme-default {
+    --bgsc-theme-name: 'Default';
+}
+
+.theme-dark {
+    --bgsc-theme-name: 'Dark';
+    --bgsc-background: 45 45 45;
+    --bgsc-on-background: 240 240 240;
+    --bgsc-primary: 207 160 233;
+    --bgsc-on-primary: 8 8 8;
+    --bgsc-secondary: 186 217 176;
+    --bgsc-on-secondary: 8 8 8;
+    --bgsc-menu-top: 62 62 62;
+    --bgsc-menu-bottom: 50 50 50;
+    --bgsc-menu-text: var(--bgsc-on-background);
+}
