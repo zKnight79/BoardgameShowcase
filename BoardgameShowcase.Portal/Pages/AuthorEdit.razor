@@ -1,0 +1,43 @@
+﻿@attribute [Route(ROUTE)]
+
+<h3>Author Edit</h3>
+
+@if (Author is null)
+{
+    <div>
+        Loading ...
+    </div>
+}
+else
+{
+    <form class="p-1 rounded bg-surface text-on-surface shadow-md">
+        <FormTextField FieldLabel="Id"
+                       FieldValue="@Author.Id"
+                       FieldPlaceholder="New author"
+                       IsReadonly="true" />
+        <FormTextField @ref="AuthorNameField"
+                       FieldLabel="Name"
+                       @bind-FieldValue="Author.Name"
+                       FieldPlaceholder="Enter author name"
+                       InvalidityHint="Please provide a name for the author."
+                       IsRequired="true" />
+        @if (!string.IsNullOrWhiteSpace(ErrorMessage))
+        {
+            <div class="p-2 mx-6 my-2 text-center font-medium border rounded text-on-error bg-error/50 border-error-dark/50">
+                @ErrorMessage
+            </div>
+        }
+        <div class="p-1 mb-1 flex justify-end space-x-2">
+            <button type="button"
+                    class="px-2 py-1 w-32 rounded-xl font-medium shadow-md focus:outline-none focus:ring text-on-primary shadow-primary bg-primary hover:bg-primary-light active:bg-primary-dark focus:ring-primary-lighter"
+                    @onclick="Validate">
+                OK
+            </button>
+            <button type="button"
+                    class="px-2 py-1 w-32 rounded-xl font-medium shadow-md focus:outline-none focus:ring text-on-error shadow-error bg-error hover:bg-error-light active:bg-error-dark focus:ring-error-lighter"
+                    @onclick="ReturnToAuthorList">
+                Cancel
+            </button>
+        </div>
+    </form>
+}

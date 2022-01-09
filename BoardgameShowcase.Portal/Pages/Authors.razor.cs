@@ -9,12 +9,18 @@ namespace BoardgameShowcase.Portal.Pages
         public const string ROUTE = "authors";
 
         [Inject] private IAuthorService AuthorService { get; set; } = default!;
+        [Inject] private NavigationManager NavigationManager { get; set; } = default!;
 
         private IEnumerable<Author> AuthorList { get; set; } = Enumerable.Empty<Author>();
 
         protected override async Task OnInitializedAsync()
         {
             AuthorList = await AuthorService.GetAllAsync();
+        }
+
+        private void AddAuthor()
+        {
+            NavigationManager.NavigateTo(AuthorEdit.GetRoute());
         }
     }
 }

@@ -3,7 +3,7 @@
 @layer base {
     /* HEADINGS */
     h1, h2, h3, h4, h5, h6 {
-        @apply font-semibold mb-2 focus-visible:outline-none;
+        @apply font-semibold mb-2 focus:outline-none;
     }
 
     h1 {
@@ -63,10 +63,22 @@
 :root {
     --bgsc-background: 252 252 252;
     --bgsc-on-background: 3 3 3;
+    --bgsc-surface: 240 240 240;
+    --bgsc-on-surface: 3 3 3;
+    --bgsc-primary-lighter: 0 131 193;
+    --bgsc-primary-light: 0 105 154;
     --bgsc-primary: 0 84 123;
+    --bgsc-primary-dark: 0 67 98;
+    --bgsc-primary-darker: 0 54 78;
     --bgsc-on-primary: 232 232 232;
     --bgsc-secondary: 143 52 147;
     --bgsc-on-secondary: 245 245 245;
+    --bgsc-error-lighter: 231 36 42;
+    --bgsc-error-light: 193 21 26;
+    --bgsc-error: 154 17 21;
+    --bgsc-error-dark: 123 14 17;
+    --bgsc-error-darker: 98 11 14;
+    --bgsc-on-error: 232 232 232;
     --bgsc-menu-top: 49 46 129;
     --bgsc-menu-bottom: 112 26 117;
     --bgsc-menu-text: var(--bgsc-background);
@@ -80,10 +92,22 @@
     --bgsc-theme-name: 'Dark';
     --bgsc-background: 45 45 45;
     --bgsc-on-background: 240 240 240;
+    --bgsc-surface: 55 55 55;
+    --bgsc-on-surface: 240 240 240;
+    --bgsc-primary-lighter: 255 255 255;
+    --bgsc-primary-light: 247 239 251;
     --bgsc-primary: 207 160 233;
+    --bgsc-primary-dark: 175 97 217;
+    --bgsc-primary-darker: 149 49 202;
     --bgsc-on-primary: 8 8 8;
     --bgsc-secondary: 186 217 176;
     --bgsc-on-secondary: 8 8 8;
+    --bgsc-error-lighter: 254 216 219;
+    --bgsc-error-light: 252 124 135;
+    --bgsc-error: 250 51 68;
+    --bgsc-error-dark: 235 6 25;
+    --bgsc-error-darker: 188 5 20;
+    --bgsc-on-error: 8 8 8;
     --bgsc-menu-top: 62 62 62;
     --bgsc-menu-bottom: 50 50 50;
     --bgsc-menu-text: var(--bgsc-on-background);
