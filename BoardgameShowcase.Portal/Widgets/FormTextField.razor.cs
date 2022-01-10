@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace BoardgameShowcase.Portal.Shared
+namespace BoardgameShowcase.Portal.Widgets
 {
     public partial class FormTextField
     {
         [Parameter] public string FieldValue { get; set; } = default!;
         [Parameter] public EventCallback<string> FieldValueChanged { get; set; }
-        [Parameter] public string FieldLabel { get; set; } = String.Empty;
+        [Parameter] public string FieldLabel { get; set; } = string.Empty;
         [Parameter] public string FieldPlaceholder { get; set; } = string.Empty;
         [Parameter] public string InvalidityHint { get; set; } = string.Empty;
         [Parameter] public bool IsRequired { get; set; } = false;

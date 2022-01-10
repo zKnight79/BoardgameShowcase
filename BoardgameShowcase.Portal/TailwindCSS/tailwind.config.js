@@ -10,7 +10,8 @@ function withOpacityValue(colorVar) {
 module.exports = {
   content: [
     "../Pages/**/*.{cshtml,razor}",
-    "../Shared/**/*.{cshtml,razor}"
+    "../Shared/**/*.{cshtml,razor}",
+    "../Widgets/**/*.{cshtml,razor}"
   ],
   theme: {
     extend: {

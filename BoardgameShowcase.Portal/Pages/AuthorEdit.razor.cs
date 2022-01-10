@@ -1,6 +1,6 @@
 ﻿using BoardgameShowcase.Model.Entity;
 using BoardgameShowcase.Model.Service;
-using BoardgameShowcase.Portal.Shared;
+using BoardgameShowcase.Portal.Widgets;
 using Microsoft.AspNetCore.Components;
 
 namespace BoardgameShowcase.Portal.Pages
