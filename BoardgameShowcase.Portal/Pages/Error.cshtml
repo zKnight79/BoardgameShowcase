@@ -19,8 +19,8 @@
 
 <body>
     <div class="p-4">
-        <h1 class="text-error">Error.</h1>
-        <h2 class="text-error">An error occurred while processing your request.</h2>
+        <h1 class="text-5xl text-error font-semibold mb-2 focus:outline-none">Error.</h1>
+        <h2 class="text-4xl text-error font-semibold mb-2 focus:outline-none">An error occurred while processing your request.</h2>
 
         @if (Model.ShowRequestId)
         {
@@ -29,7 +29,7 @@
             </p>
         }
 
-        <h3>Development Mode</h3>
+        <h3 class="text-3xl font-semibold mb-2 focus:outline-none">Development Mode</h3>
         <p>
             Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
         </p>
