@@ -7,9 +7,10 @@ namespace BoardgameShowcase.Portal.Widgets
     {
         [Parameter] public RenderFragment? ChildContent { get; set; }
         [Parameter] public string? CustomCssClass { get; set; }
+        [Parameter] public bool SkipBaseCssClass { get; set; }
 
         protected virtual string? BaseCssClass { get; }
 
-        protected string FinalCssClass => StringUtil.JoinNonNullOrWhiteSpace(" ", BaseCssClass, CustomCssClass);
+        protected string FinalCssClass => StringUtil.JoinNonNullOrWhiteSpace(" ", SkipBaseCssClass ? null : BaseCssClass, CustomCssClass);
     }
 }
