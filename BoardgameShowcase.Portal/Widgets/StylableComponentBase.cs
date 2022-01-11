@@ -5,7 +5,6 @@ namespace BoardgameShowcase.Portal.Widgets
 {
     public abstract class StylableComponentBase : ComponentBase
     {
-        [Parameter] public RenderFragment? ChildContent { get; set; }
         [Parameter] public string? CustomCssClass { get; set; }
         [Parameter] public bool SkipBaseCssClass { get; set; }
 
