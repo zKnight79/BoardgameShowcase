@@ -2,9 +2,14 @@
 
 @using BoardgameShowcase.Model.Entity
 
-<Heading3>
-    Illustrators
-</Heading3>
+<div class="flex justify-between items-center">
+    <Heading3>
+        Illustrators
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new illustrator" OnClick="AddIllustrator">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
 
 <ResponsiveContainer>
     <TableWidget>

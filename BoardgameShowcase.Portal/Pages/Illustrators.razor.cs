@@ -9,12 +9,18 @@ namespace BoardgameShowcase.Portal.Pages
         public const string ROUTE = "illustrators";
 
         [Inject] private IIllustratorService IllustratorService { get; set; } = default!;
+        [Inject] private NavigationManager NavigationManager { get; set; } = default!;
 
         private IEnumerable<Illustrator> IllustratorList { get; set; } = Enumerable.Empty<Illustrator>();
 
         protected override async Task OnInitializedAsync()
         {
             IllustratorList = await IllustratorService.GetAllAsync();
+        }
+
+        private void AddIllustrator()
+        {
+            NavigationManager.NavigateTo(IllustratorEdit.GetRoute());
         }
     }
 }
