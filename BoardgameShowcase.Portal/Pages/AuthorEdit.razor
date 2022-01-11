@@ -12,15 +12,16 @@ else
 {
     <form class="p-1 rounded bg-surface text-on-surface shadow-md">
         <FormTextField FieldLabel="Id"
-                       FieldValue="@Author.Id"
+                       Value="@Author.Id"
                        FieldPlaceholder="New author"
                        IsReadonly="true" />
         <FormTextField @ref="AuthorNameField"
                        FieldLabel="Name"
-                       @bind-FieldValue="Author.Name"
+                       @bind-Value="Author.Name"
                        FieldPlaceholder="Enter author name"
                        InvalidityHint="Please provide a name for the author."
-                       IsRequired="true" />
+                       IsRequired="true"
+                       SelectOnFocus="false" />
         <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
         <div class="p-1 mb-1 flex justify-end space-x-2">
             <ButtonPrimaryWidget OnClick="Validate">
