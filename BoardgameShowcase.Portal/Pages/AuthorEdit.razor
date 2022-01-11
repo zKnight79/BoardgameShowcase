@@ -10,7 +10,7 @@
 }
 else
 {
-    <form class="p-1 rounded bg-surface text-on-surface shadow-md">
+    <FormWidget>
         <FormTextField FieldLabel="Id"
                        Value="@Author.Id"
                        FieldPlaceholder="New author"
@@ -23,6 +23,7 @@ else
                        IsRequired="true"
                        SelectOnFocus="false" />
         <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
+        <hr class="border-on-surface/25 m-2" />
         <div class="p-1 mb-1 flex justify-end space-x-2">
             <ButtonPrimaryWidget OnClick="Validate">
                 OK
@@ -31,5 +32,5 @@ else
                 Cancel
             </ButtonErrorWidget>
         </div>
-    </form>
+    </FormWidget>
 }
