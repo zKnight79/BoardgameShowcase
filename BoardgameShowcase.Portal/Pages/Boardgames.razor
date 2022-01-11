@@ -6,32 +6,32 @@
     Boardgames
 </Heading3>
 
-<div class="overflow-x-auto shadow-lg">
-    <table class="table-auto w-full">
-        <thead>
-            <tr>
-                <th>
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
                     Boardgame ID
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Title
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Author
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Illustrator
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Publisher
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
             @foreach (Boardgame boardgame in BoardgameList)
             {
                 <BoardgamesTableRow @key="boardgame.UiId" Boardgame="boardgame" />
             }
-        </tbody>
-    </table>
-</div>
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

@@ -1,21 +1,21 @@
 ﻿@using BoardgameShowcase.Model.Entity
 
-<tr>
-    <td class="whitespace-nowrap">
+<TableBodyRow>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         <LinkWidget>
             @Boardgame.Id
         </LinkWidget>
-    </td>
-    <td class="whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         @Boardgame.Title
-    </td>
-    <td class="whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         @Author?.Name
-    </td>
-    <td class="whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         @Illustrator?.Name
-    </td>
-    <td class="whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         @Publisher?.Name
-    </td>
-</tr>
+    </TableBodyCell>
+</TableBodyRow>

@@ -6,26 +6,26 @@
     Publishers
 </Heading3>
 
-<div class="overflow-x-auto shadow-lg">
-    <table class="table-auto w-full">
-        <thead>
-            <tr>
-                <th>
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
                     Publisher ID
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Name
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Boardgames
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
             @foreach (Publisher publisher in PublisherList)
             {
                 <PublishersTableRow @key="publisher.UiId" Publisher="publisher" />
             }
-        </tbody>
-    </table>
-</div>
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

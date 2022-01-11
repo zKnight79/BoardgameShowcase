@@ -1,15 +1,15 @@
 ﻿@using BoardgameShowcase.Model.Entity
 
-<tr>
-    <td class="whitespace-nowrap">
+<TableBodyRow>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         <LinkWidget>
             @Illustrator.Id
         </LinkWidget>
-    </td>
-    <td class="whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         @Illustrator.Name
-    </td>
-    <td class="whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         <ul>
             @foreach (Boardgame boardgame in BoardgameList)
             {
@@ -20,5 +20,5 @@
                 <li>...</li>
             }
         </ul>
-    </td>
-</tr>
+    </TableBodyCell>
+</TableBodyRow>

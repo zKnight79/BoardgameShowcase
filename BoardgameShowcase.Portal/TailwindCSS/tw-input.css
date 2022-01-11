@@ -1,28 +1,4 @@
 @tailwind base;
-
-@layer base {
-    /* TABLE */
-    thead {
-        @apply font-bold bg-primary text-on-primary;
-    }
-
-    tbody tr {
-        @apply bg-primary/10 even:bg-primary/20 hover:bg-primary/40;
-    }
-
-    th, td {
-        @apply p-1 text-left border border-primary/25;
-    }
-
-    th {
-        @apply align-bottom;
-    }
-
-    td {
-        @apply align-middle;
-    }
-}
-
 @tailwind components;
 @tailwind utilities;
 

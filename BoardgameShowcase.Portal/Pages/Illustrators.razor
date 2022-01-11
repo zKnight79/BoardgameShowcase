@@ -6,26 +6,26 @@
     Illustrators
 </Heading3>
 
-<div class="overflow-x-auto shadow-lg">
-    <table class="table-auto w-full">
-        <thead>
-            <tr>
-                <th>
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
                     Illustrator ID
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Name
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Boardgames
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
             @foreach (Illustrator illustrator in IllustratorList)
             {
                 <IllustratorsTableRow @key="illustrator.UiId" Illustrator="illustrator" />
             }
-        </tbody>
-    </table>
-</div>
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

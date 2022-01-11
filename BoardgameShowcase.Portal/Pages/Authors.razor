@@ -11,26 +11,26 @@
     </ButtonPrimaryWidget>
 </div>
 
-<div class="overflow-x-auto shadow-lg">
-    <table class="table-auto w-full">
-        <thead>
-            <tr>
-                <th>
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
                     Author ID
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Name
-                </th>
-                <th>
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Boardgames
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
             @foreach (Author author in AuthorList)
             {
                 <AuthorsTableRow @key="author.UiId" Author="author" />
             }
-        </tbody>
-    </table>
-</div>
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>
