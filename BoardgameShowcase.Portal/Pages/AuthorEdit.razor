@@ -23,16 +23,12 @@ else
                        IsRequired="true" />
         <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
         <div class="p-1 mb-1 flex justify-end space-x-2">
-            <button type="button"
-                    class="px-2 py-1 w-32 rounded-xl font-medium shadow-md focus:outline-none focus:ring text-on-primary shadow-primary bg-primary hover:bg-primary-light active:bg-primary-dark focus:ring-primary-lighter"
-                    @onclick="Validate">
+            <ButtonPrimaryWidget OnClick="Validate">
                 OK
-            </button>
-            <button type="button"
-                    class="px-2 py-1 w-32 rounded-xl font-medium shadow-md focus:outline-none focus:ring text-on-error shadow-error bg-error hover:bg-error-light active:bg-error-dark focus:ring-error-lighter"
-                    @onclick="ReturnToAuthorList">
+            </ButtonPrimaryWidget>
+            <ButtonErrorWidget OnClick="ReturnToAuthorList">
                 Cancel
-            </button>
+            </ButtonErrorWidget>
         </div>
     </form>
 }

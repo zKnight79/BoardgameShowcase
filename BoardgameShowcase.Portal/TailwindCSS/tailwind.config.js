@@ -11,7 +11,7 @@ module.exports = {
   content: [
     "../Pages/**/*.{cshtml,razor}",
     "../Shared/**/*.{cshtml,razor}",
-    "../Widgets/**/*.{cshtml,razor}"
+    "../Widgets/**/*.{cshtml,razor,cs}"
   ],
   theme: {
     extend: {
