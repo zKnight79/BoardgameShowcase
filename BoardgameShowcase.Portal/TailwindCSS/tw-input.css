@@ -21,11 +21,6 @@
     td {
         @apply align-middle;
     }
-
-    /* LINK */
-    a {
-        @apply text-primary hover:text-secondary font-semibold underline;
-    }
 }
 
 @tailwind components;
