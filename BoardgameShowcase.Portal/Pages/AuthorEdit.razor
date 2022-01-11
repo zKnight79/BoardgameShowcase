@@ -22,15 +22,14 @@ else
                        InvalidityHint="Please provide a name for the author."
                        IsRequired="true"
                        SelectOnFocus="false" />
-        <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
-        <hr class="border-on-surface/25 m-2" />
-        <div class="p-1 mb-1 flex justify-end space-x-2">
+        <FormBottomContainer>
+            <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
             <ButtonPrimaryWidget OnClick="Validate">
                 OK
             </ButtonPrimaryWidget>
             <ButtonErrorWidget OnClick="ReturnToAuthorList">
                 Cancel
             </ButtonErrorWidget>
-        </div>
+        </FormBottomContainer>
     </FormWidget>
 }
