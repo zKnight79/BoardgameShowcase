@@ -2,9 +2,14 @@
 
 @using BoardgameShowcase.Model.Entity
 
-<Heading3>
-    Publishers
-</Heading3>
+<div class="flex justify-between items-center">
+    <Heading3>
+        Publishers
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new publisher" OnClick="AddPublisher">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
 
 <ResponsiveContainer>
     <TableWidget>

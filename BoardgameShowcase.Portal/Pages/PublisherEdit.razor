@@ -1,0 +1,35 @@
+﻿@attribute [Route(ROUTE)]
+
+<Heading3>
+    Publisher Edit
+</Heading3>
+
+@if (Publisher is null)
+{
+    <LoadingWidget />
+}
+else
+{
+    <FormWidget>
+        <FormTextField FieldLabel="Id"
+                       Value="@Publisher.Id"
+                       FieldPlaceholder="New publisher"
+                       IsReadonly="true" />
+        <FormTextField @ref="PublisherNameField"
+                       FieldLabel="Name"
+                       @bind-Value="Publisher.Name"
+                       FieldPlaceholder="Enter publisher name"
+                       InvalidityHint="Please provide a name for the publisher."
+                       IsRequired="true"
+                       SelectOnFocus="false" />
+        <FormBottomContainer>
+            <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
+            <ButtonPrimaryWidget OnClick="Validate">
+                OK
+            </ButtonPrimaryWidget>
+            <ButtonErrorWidget OnClick="ReturnToPublisherList">
+                Cancel
+            </ButtonErrorWidget>
+        </FormBottomContainer>
+    </FormWidget>
+}
