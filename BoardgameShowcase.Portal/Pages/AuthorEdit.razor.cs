@@ -17,7 +17,7 @@ namespace BoardgameShowcase.Portal.Pages
         [Parameter] public string AuthorId { get; set; } = string.Empty;
 
         private Author Author { get; set; } = default!;
-        private FormTextField? AuthorNameField { get; set; }
+        private FormInputField<string>? AuthorNameField { get; set; }
         private string? ErrorMessage { get; set; }
 
         protected override async Task OnInitializedAsync()

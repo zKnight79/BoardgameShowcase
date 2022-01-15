@@ -17,7 +17,7 @@ namespace BoardgameShowcase.Portal.Pages
         [Parameter] public string IllustratorId { get; set; } = string.Empty;
 
         private Illustrator Illustrator { get; set; } = default!;
-        private FormTextField? IllustratorNameField { get; set; }
+        private FormInputField<string>? IllustratorNameField { get; set; }
         private string? ErrorMessage { get; set; }
 
         protected override async Task OnInitializedAsync()

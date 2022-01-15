@@ -11,17 +11,17 @@
 else
 {
     <FormWidget>
-        <FormTextField FieldLabel="Id"
-                       Value="@Author.Id"
-                       FieldPlaceholder="New author"
-                       IsReadonly="true" />
-        <FormTextField @ref="AuthorNameField"
-                       FieldLabel="Name"
-                       @bind-Value="Author.Name"
-                       FieldPlaceholder="Enter author name"
-                       InvalidityHint="Please provide a name for the author."
-                       IsRequired="true"
-                       SelectOnFocus="false" />
+        <FormInputField FieldLabel="Id"
+                        Value="@Author.Id"
+                        FieldPlaceholder="New author"
+                        IsReadonly="true" />
+        <FormInputField @ref="AuthorNameField"
+                        FieldLabel="Name"
+                        @bind-Value="Author.Name"
+                        FieldPlaceholder="Enter author name"
+                        InvalidityHint="Please provide a name for the author."
+                        IsRequired="true"
+                        SelectOnFocus="false" />
         <FormBottomContainer>
             <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
             <ButtonPrimaryWidget OnClick="Validate">

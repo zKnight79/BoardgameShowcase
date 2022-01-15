@@ -1,5 +1,7 @@
-﻿<label class="p-1 flex flex-wrap items-center">
-    <input type="text"
+﻿@typeparam T
+
+<label class="p-1 flex flex-wrap items-center">
+    <input type="@InputType"
            @ref="InputField"
            required="@IsRequired"
            readonly="@IsReadonly"

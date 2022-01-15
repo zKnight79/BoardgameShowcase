@@ -17,7 +17,7 @@ namespace BoardgameShowcase.Portal.Pages
         [Parameter] public string PublisherId { get; set; } = string.Empty;
 
         private Publisher Publisher { get; set; } = default!;
-        private FormTextField? PublisherNameField { get; set; }
+        private FormInputField<string>? PublisherNameField { get; set; }
         private string? ErrorMessage { get; set; }
 
         protected override async Task OnInitializedAsync()
