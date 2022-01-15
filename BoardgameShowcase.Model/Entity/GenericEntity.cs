@@ -64,7 +64,7 @@ namespace BoardgameShowcase.Model.Entity
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public object Clone()
+        public virtual object Clone()
         {
             return MemberwiseClone();
         }

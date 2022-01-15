@@ -66,5 +66,24 @@ namespace BoardgameShowcase.Model.Entity
         /// Get or set the category of the boardgame.
         /// </summary>
         public Category Category { get; set; }
+
+        public override object Clone()
+        {
+            return new Boardgame()
+            {
+                Id = Id,
+                Title = Title,
+                MinimumPlayerCount = MinimumPlayerCount,
+                MaximumPlayerCount = MaximumPlayerCount,
+                ApproximateGameTimeInMinutes = ApproximateGameTimeInMinutes,
+                MinimumPlayerAge = MinimumPlayerAge,
+                AuthorId = AuthorId,
+                IllustratorId = IllustratorId,
+                PublisherId = PublisherId,
+                Themes = Themes,
+                Mechanisms = Mechanisms,
+                Category = Category
+            };
+        }
     }
 }
