@@ -2,9 +2,14 @@
 
 @using BoardgameShowcase.Model.Entity
 
-<Heading3>
-    Boardgames
-</Heading3>
+<div class="flex justify-between items-center">
+    <Heading3>
+        Boardgames
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new boardgame" OnClick="AddBoardgame">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
 
 <ResponsiveContainer>
     <TableWidget>

@@ -9,12 +9,18 @@ namespace BoardgameShowcase.Portal.Pages
         public const string ROUTE = "boardgames";
 
         [Inject] private IBoardgameService BoardgameService { get; set; } = default!;
+        [Inject] private NavigationManager NavigationManager { get; set; } = default!;
 
         private IEnumerable<Boardgame> BoardgameList { get; set; } = Enumerable.Empty<Boardgame>();
 
         protected override async Task OnInitializedAsync()
         {
             BoardgameList = await BoardgameService.GetAllAsync();
+        }
+
+        private void AddBoardgame()
+        {
+            NavigationManager.NavigateTo(BoardgameEdit.GetRoute());
         }
     }
 }
