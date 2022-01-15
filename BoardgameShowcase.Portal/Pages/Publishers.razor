@@ -1,0 +1,36 @@
+﻿@attribute [Route(ROUTE)]
+
+@using BoardgameShowcase.Model.Entity
+
+<div class="flex justify-between items-center">
+    <Heading3>
+        Publishers
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new publisher" OnClick="AddPublisher">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
+
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
+                    Publisher ID
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Name
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Boardgames
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+            @foreach (Publisher publisher in PublisherList)
+            {
+                <PublishersTableRow @key="publisher.UiId" Publisher="publisher" />
+            }
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

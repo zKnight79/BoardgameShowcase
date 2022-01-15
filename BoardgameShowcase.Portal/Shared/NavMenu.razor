@@ -1,12 +1,12 @@
-﻿<div class="bg-gradient-to-b from-indigo-900 to-fuchsia-900 md:flex-initial md:min-w-[250px] md:h-screen md:sticky md:top-0">
+﻿<div class="bg-gradient-to-b from-menu-top to-menu-bottom md:flex-initial md:min-w-[250px] md:h-screen md:sticky md:top-0">
     <div class="bg-black/40 text-neutral-100 h-14 py-2 pl-4">
         <div class="flex content-center justify-between px-2">
-            <a class="text-lg font-bold py-1"
+            <a class="text-lg text-menu-text font-bold py-1"
                href="">
                 Boardgame Showcase
             </a>
             <button type="button" role="button"
-                    class="rounded bg-white/10 hover:bg-white/25 md:hidden px-2"
+                    class="rounded bg-menu-text/10 hover:bg-menu-text/25 md:hidden px-2"
                     title="Navigation menu"
                     @onclick="ToggleNavMenu">
                 <i class="fas fa-bars fa-2x"></i>
@@ -14,13 +14,13 @@
         </div>
     </div>
 
-    <div class="text-white @(CollapseNavMenu ? "hidden" : "") md:block" @onclick="HideNavMenu">
+    <div class="@(CollapseNavMenu ? "hidden" : "") md:block" @onclick="HideNavMenu">
         <nav class="space-y-3 py-3">
             <NavMenuItem HRef="" Label="Home" FAIconClass="fas fa-home" LinkMatch="NavLinkMatch.All" />
-            <NavMenuItem HRef="boardgames" Label="Boardgames" FAIconClass="fas fa-dice" />
-            <NavMenuItem HRef="authors" Label="Authors" FAIconClass="fas fa-user" />
-            <NavMenuItem HRef="illustrators" Label="Illustrators" FAIconClass="far fa-images" />
-            <NavMenuItem HRef="publishers" Label="Publishers" FAIconClass="fas fa-store-alt" />
+            <NavMenuItem HRef="@Boardgames.ROUTE" Label="Boardgames" FAIconClass="fas fa-dice" />
+            <NavMenuItem HRef="@Authors.ROUTE" Label="Authors" FAIconClass="fas fa-user" />
+            <NavMenuItem HRef="@Illustrators.ROUTE" Label="Illustrators" FAIconClass="far fa-images" />
+            <NavMenuItem HRef="@Publishers.ROUTE" Label="Publishers" FAIconClass="fas fa-store-alt" />
         </nav>
     </div>
 </div>

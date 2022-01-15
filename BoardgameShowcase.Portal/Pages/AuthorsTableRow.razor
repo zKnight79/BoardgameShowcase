@@ -1,17 +1,15 @@
 ﻿@using BoardgameShowcase.Model.Entity
 
-<tr class="odd:bg-slate-200 hover:bg-slate-800 hover:text-slate-100 divide-x divide-slate-300">
-    <td class="p-1 whitespace-nowrap">
-        <button type="button"
-                class="p-1 mr-2 rounded-md text-slate-100 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300">
-            <i class="far fa-edit fa-fw"></i>
-        </button>
-        @Author.Id
-    </td>
-    <td class="p-1 whitespace-nowrap">
+<TableBodyRow>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        <LinkWidget HRef="@AuthorEdit.GetRoute(Author.Id)">
+            @Author.Id
+        </LinkWidget>
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         @Author.Name
-    </td>
-    <td class="p-1 whitespace-nowrap">
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
         <ul>
             @foreach (Boardgame boardgame in BoardgameList)
             {
@@ -22,5 +20,5 @@
                 <li>...</li>
             }
         </ul>
-    </td>
-</tr>
+    </TableBodyCell>
+</TableBodyRow>

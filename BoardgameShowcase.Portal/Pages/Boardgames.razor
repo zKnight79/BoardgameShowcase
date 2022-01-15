@@ -1,0 +1,42 @@
+﻿@attribute [Route(ROUTE)]
+
+@using BoardgameShowcase.Model.Entity
+
+<div class="flex justify-between items-center">
+    <Heading3>
+        Boardgames
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new boardgame" OnClick="AddBoardgame">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
+
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
+                    Boardgame ID
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Title
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Author
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Illustrator
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Publisher
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+            @foreach (Boardgame boardgame in BoardgameList)
+            {
+                <BoardgamesTableRow @key="boardgame.UiId" Boardgame="boardgame" />
+            }
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

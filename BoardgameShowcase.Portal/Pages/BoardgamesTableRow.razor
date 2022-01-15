@@ -1,0 +1,21 @@
+﻿@using BoardgameShowcase.Model.Entity
+
+<TableBodyRow>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        <LinkWidget HRef="@BoardgameEdit.GetRoute(Boardgame.Id)">
+            @Boardgame.Id
+        </LinkWidget>
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        @Boardgame.Title
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        @Author?.Name
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        @Illustrator?.Name
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        @Publisher?.Name
+    </TableBodyCell>
+</TableBodyRow>

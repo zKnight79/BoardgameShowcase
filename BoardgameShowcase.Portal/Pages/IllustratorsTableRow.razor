@@ -1,0 +1,24 @@
+﻿@using BoardgameShowcase.Model.Entity
+
+<TableBodyRow>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        <LinkWidget HRef="@IllustratorEdit.GetRoute(Illustrator.Id)">
+            @Illustrator.Id
+        </LinkWidget>
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        @Illustrator.Name
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        <ul>
+            @foreach (Boardgame boardgame in BoardgameList)
+            {
+                <li>@boardgame.Title</li>
+            }
+            @if (BoardgameCount > MAX_BOARDGAME_COUNT)
+            {
+                <li>...</li>
+            }
+        </ul>
+    </TableBodyCell>
+</TableBodyRow>

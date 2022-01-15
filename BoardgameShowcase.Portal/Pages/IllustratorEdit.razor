@@ -1,0 +1,35 @@
+﻿@attribute [Route(ROUTE)]
+
+<Heading3>
+    Illustrator Edit
+</Heading3>
+
+@if (Illustrator is null)
+{
+    <LoadingWidget />
+}
+else
+{
+    <FormWidget>
+        <FormInputField FieldLabel="Id"
+                        Value="@Illustrator.Id"
+                        FieldPlaceholder="New illustrator"
+                        IsReadonly="true" />
+        <FormInputField @ref="IllustratorNameField"
+                        FieldLabel="Name"
+                        @bind-Value="Illustrator.Name"
+                        FieldPlaceholder="Enter illustrator name"
+                        InvalidityHint="Please provide a name for the illustrator."
+                        IsRequired="true"
+                        SelectOnFocus="false" />
+        <FormBottomContainer>
+            <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
+            <ButtonPrimaryWidget OnClick="Validate">
+                OK
+            </ButtonPrimaryWidget>
+            <ButtonErrorWidget OnClick="ReturnToIllustratorList">
+                Cancel
+            </ButtonErrorWidget>
+        </FormBottomContainer>
+    </FormWidget>
+}

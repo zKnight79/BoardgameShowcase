@@ -2,28 +2,35 @@
 
 @using BoardgameShowcase.Model.Entity
 
-<h3>Authors</h3>
+<div class="flex justify-between items-center">
+    <Heading3>
+        Authors
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new author" OnClick="AddAuthor">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
 
-<div class="overflow-x-auto shadow-lg">
-    <table class="table-auto w-full border border-slate-300">
-        <thead class="bg-slate-600 text-slate-100">
-            <tr class="divide-x divide-slate-300">
-                <th class="p-1">
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
                     Author ID
-                </th>
-                <th class="p-1">
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Name
-                </th>
-                <th class="p-1">
+                </TableHeaderCell>
+                <TableHeaderCell>
                     Boardgames
-                </th>
-            </tr>
-        </thead>
-        <tbody class="bg-slate-50 text-slate-700 divide-y divide-slate-300">
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
             @foreach (Author author in AuthorList)
             {
                 <AuthorsTableRow @key="author.UiId" Author="author" />
             }
-        </tbody>
-    </table>
-</div>
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

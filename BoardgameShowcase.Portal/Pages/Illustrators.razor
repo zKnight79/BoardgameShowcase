@@ -1,0 +1,36 @@
+﻿@attribute [Route(ROUTE)]
+
+@using BoardgameShowcase.Model.Entity
+
+<div class="flex justify-between items-center">
+    <Heading3>
+        Illustrators
+    </Heading3>
+    <ButtonPrimaryWidget Title="Add a new illustrator" OnClick="AddIllustrator">
+        <i class="fas fa-plus"></i>
+    </ButtonPrimaryWidget>
+</div>
+
+<ResponsiveContainer>
+    <TableWidget>
+        <TableHeader>
+            <TableHeaderRow>
+                <TableHeaderCell>
+                    Illustrator ID
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Name
+                </TableHeaderCell>
+                <TableHeaderCell>
+                    Boardgames
+                </TableHeaderCell>
+            </TableHeaderRow>
+        </TableHeader>
+        <TableBody>
+            @foreach (Illustrator illustrator in IllustratorList)
+            {
+                <IllustratorsTableRow @key="illustrator.UiId" Illustrator="illustrator" />
+            }
+        </TableBody>
+    </TableWidget>
+</ResponsiveContainer>

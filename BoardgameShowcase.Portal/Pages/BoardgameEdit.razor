@@ -1,0 +1,73 @@
+﻿@attribute [Route(ROUTE)]
+
+<Heading3>
+    Boardgame Edit
+</Heading3>
+
+@if (Boardgame is null)
+{
+    <LoadingWidget />
+}
+else
+{
+    <FormWidget>
+        <FormInputField FieldLabel="Id"
+                        Value="@Boardgame.Id"
+                        FieldPlaceholder="New boardgame"
+                        IsReadonly="true" />
+        <FormInputField @ref="BoardgameTitleField"
+                        FieldLabel="Title"
+                        @bind-Value="Boardgame.Title"
+                        FieldPlaceholder="Enter boardgame title"
+                        InvalidityHint="Please provide a title for the boardgame."
+                        IsRequired="true"
+                        SelectOnFocus="false" />
+        <FormInputField FieldLabel="Min. # players"
+                        @bind-Value="Boardgame.MinimumPlayerCount"
+                        FieldPlaceholder="Enter minimum player count"
+                        InvalidityHint="Please provide the minimum player count"/>
+        <FormInputField FieldLabel="Max. # players"
+                        @bind-Value="Boardgame.MaximumPlayerCount"
+                        FieldPlaceholder="Enter maximum player count"
+                        InvalidityHint="Please provide the maximum player count"/>
+        <FormInputField FieldLabel="Min. player age"
+                        @bind-Value="Boardgame.MinimumPlayerAge"
+                        FieldPlaceholder="Enter minimum player age"
+                        InvalidityHint="Please provide the minimum player age"/>
+        <FormSelectField FieldLabel="Author"
+                         @bind-Value="Boardgame.AuthorId"
+                         InvalidityHint="Please select an author"
+                         IsRequired="true"
+                         Options="AuthorOptions" />
+        <FormSelectField FieldLabel="Illustrator"
+                         @bind-Value="Boardgame.IllustratorId"
+                         InvalidityHint="Please select an illustrator"
+                         IsRequired="true"
+                         Options="IllustratorOptions" />
+        <FormSelectField FieldLabel="Publisher"
+                         @bind-Value="Boardgame.PublisherId"
+                         InvalidityHint="Please select an publisher"
+                         IsRequired="true"
+                         Options="PublisherOptions" />
+        <FormListField FieldLabel="Theme"
+                       @bind-Values="Boardgame.Themes"
+                       Options="ThemeOptions"/>
+        <FormListField FieldLabel="Mechanism"
+                       @bind-Values="Boardgame.Mechanisms"
+                       Options="MechanismOptions"/>
+        <FormSelectField FieldLabel="Category"
+                         @bind-Value="Boardgame.Category"
+                         InvalidityHint="Please select an category"
+                         IsRequired="true"
+                         Options="CategoryOptions" />
+        <FormBottomContainer>
+            <ErrorMessageWidget ErrorMessage="@ErrorMessage" />
+            <ButtonPrimaryWidget OnClick="Validate">
+                OK
+            </ButtonPrimaryWidget>
+            <ButtonErrorWidget OnClick="ReturnToBoardgameList">
+                Cancel
+            </ButtonErrorWidget>
+        </FormBottomContainer>
+    </FormWidget>
+}

@@ -1,0 +1,24 @@
+﻿@using BoardgameShowcase.Model.Entity
+
+<TableBodyRow>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        <LinkWidget HRef="@PublisherEdit.GetRoute(Publisher.Id)">
+            @Publisher.Id
+        </LinkWidget>
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        @Publisher.Name
+    </TableBodyCell>
+    <TableBodyCell CustomCssClass="whitespace-nowrap">
+        <ul>
+            @foreach (Boardgame boardgame in BoardgameList)
+            {
+                <li>@boardgame.Title</li>
+            }
+            @if (BoardgameCount > MAX_BOARDGAME_COUNT)
+            {
+                <li>...</li>
+            }
+        </ul>
+    </TableBodyCell>
+</TableBodyRow>

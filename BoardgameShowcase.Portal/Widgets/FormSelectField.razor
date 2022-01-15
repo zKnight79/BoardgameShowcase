@@ -1,0 +1,29 @@
+﻿@typeparam T
+
+<label class="p-1 flex flex-wrap items-center">
+    <select required="@IsRequired"
+            disabled="@IsDisabled"
+            class="order-2 peer basis-full sm:basis-2/3 md:basis-3/4 lg:basis-4/5 px-2 py-1 rounded-md border border-r-4 focus-visible:outline-none focus:ring-1 focus:ring-primary-lighter invalid:focus:ring-error-lighter placeholder:italic invalid:placeholder:text-error bg-transparent invalid:bg-error/5 hover:bg-background/50 invalid:hover:bg-error/10 focus:bg-background invalid:focus:bg-error/20 border-transparent invalid:border-error/50 hover:border-primary/75 invalid:hover:border-error/75 focus:border-primary invalid:focus:border-error"
+            value="@Value"
+            @onchange="SelectValueChanged">
+        <option value="">
+            -- Select a value --
+        </option>
+        @if (Options is not null)
+        {
+            @foreach (var option in Options.OrderBy(o => o.Value))
+            {
+                <option value="@option.Key">
+                    @option.Value
+                </option>
+            }
+        }
+    </select>
+    <span class="order-1 basis-full sm:basis-1/3 md:basis-1/4 lg:basis-1/5 p-1 peer-invalid:text-error peer-required:after:content-['_*']">
+        @FieldLabel
+    </span>
+    <span class="order-3 hidden peer-invalid:block basis-full sm:basis-1/3 md:basis-1/4 lg:basis-1/5" />
+    <span class="order-4 hidden peer-invalid:block basis-full sm:basis-2/3 md:basis-3/4 lg:basis-4/5 mt-2 text-error text-sm">
+        @InvalidityHint
+    </span>
+</label>

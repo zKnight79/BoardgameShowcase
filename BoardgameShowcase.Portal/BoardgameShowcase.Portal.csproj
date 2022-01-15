@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -18,8 +18,8 @@
   </ItemGroup>
   
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec WorkingDirectory="../Tailwind.For.Portal" Command="npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.css" />
-    <Exec WorkingDirectory="../Tailwind.For.Portal" Command="npx tailwindcss -i ./src/tw-input.css -o ../BoardgameShowcase.Portal/wwwroot/css/tailwind.min.css --minify" />
+    <Exec WorkingDirectory="./TailwindCSS" Command="tailwindcss -i ./tw-input.css -o ../wwwroot/css/tailwind.css" />
+    <Exec WorkingDirectory="./TailwindCSS" Command="tailwindcss -i ./tw-input.css -o ../wwwroot/css/tailwind.min.css --minify" />
   </Target>
 
 </Project>
